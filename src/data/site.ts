@@ -42,19 +42,19 @@ export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encode
 )}`;
 
 export const navigation = [
-  { label: "About", href: "#about" },
-  { label: "Ministries", href: "#ministries" },
-  { label: "Watch", href: "#watch" },
-  { label: "Events", href: "#events" },
-  { label: "Visit", href: "#visit" },
+  { label: "About", href: "/about" },
+  { label: "Ministries", href: "/ministries" },
+  { label: "Watch", href: "/watch" },
+  { label: "Events", href: "/events" },
+  { label: "Visit", href: "/visit" },
 ] as const;
 
 export const primaryCta = {
   label: "Plan your visit",
-  href: "#visit",
+  href: "/visit",
 } as const;
 
 export const secondaryCta = {
   label: "Watch online",
-  href: "#watch",
+  href: "/watch",
 } as const;

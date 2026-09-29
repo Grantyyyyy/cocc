@@ -1,6 +1,6 @@
 import type { StaticImageData } from "next/image";
-import pastorBayani from "../../public/brand/pastor.png";
-import pastoraAngie from "../../public/brand/pastora.png";
+import pastorBayani from "../../public/brand/pastor.webp";
+import pastoraAngie from "../../public/brand/pastora.webp";
 
 export const pillars = ["Worship", "The Word", "Prayer", "Family", "Community", "Mission"];
 

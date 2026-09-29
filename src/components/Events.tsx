@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Icon from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import { events } from "@/data/content";
 
@@ -10,17 +12,40 @@ const parts = (value: string) => {
   };
 };
 
-export default function Events() {
+export default function Events({
+  standalone = false,
+}: {
+  standalone?: boolean;
+}) {
   return (
-    <section id="events" aria-labelledby="events-title" className="scroll-mt-24 py-14 sm:py-20">
+    <section
+      aria-labelledby={standalone ? undefined : "events-title"}
+      aria-label={standalone ? "Upcoming events" : undefined}
+      className="py-14 sm:py-20"
+    >
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
-        <SectionHeading
-          id="events-title"
-          title="Coming up"
-          description="Guests are welcome at every one of these. Dates shown are samples until the church confirms its calendar."
-        />
+        {standalone ? (
+          <p className="text-sm text-muted">
+            Dates shown are samples until the church confirms its calendar.
+          </p>
+        ) : (
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading
+              id="events-title"
+              title="Coming up"
+              description="Guests are welcome at every one of these. Dates shown are samples until the church confirms its calendar."
+            />
+            <Link
+              href="/events"
+              className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full border border-text/30 px-6 py-3 text-sm font-semibold text-text transition-[border-color,gap] duration-300 hover:gap-3 hover:border-text/60"
+            >
+              All events
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
 
-        <ul className="mt-14 border-t border-line">
+        <ul className={`${standalone ? "mt-8" : "mt-14"} border-t border-line`}>
           {events.map((event) => {
             const { month, day, weekday } = parts(event.date);
             return (
@@ -47,7 +72,9 @@ export default function Events() {
                     {weekday} · {event.time} · {event.location}
                   </p>
                 </div>
-                <p className="max-w-[52ch] leading-7 text-muted">{event.description}</p>
+                <p className="max-w-[52ch] leading-7 text-muted">
+                  {event.description}
+                </p>
               </li>
             );
           })}

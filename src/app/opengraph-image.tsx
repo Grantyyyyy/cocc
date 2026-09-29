@@ -7,7 +7,8 @@ export const alt = `${siteConfig.name}, ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-const logoData = await readFile(join(process.cwd(), "public/brand/cocc-logo.png"), "base64");
+// The OG renderer does not decode WebP, so it reads the PNG app icon instead.
+const logoData = await readFile(join(process.cwd(), "src/app/icon.png"), "base64");
 const logoSrc = `data:image/png;base64,${logoData}`;
 
 export default function OpengraphImage() {
@@ -25,7 +26,7 @@ export default function OpengraphImage() {
           color: "#ffffff",
         }}
       >
-        <img src={logoSrc} width={340} height={340} style={{ borderRadius: 32 }} alt="" />
+        <img src={logoSrc} width={256} height={256} style={{ borderRadius: 28 }} alt="" />
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div style={{ fontSize: 30, color: "#efe4fc" }}>{siteConfig.name}</div>
           <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -2 }}>

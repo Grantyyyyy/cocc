@@ -3,6 +3,7 @@ import { Geist, Poppins, Sacramento } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SideRaysBackground from "@/components/SideRaysBackground";
 import StructuredData from "@/components/StructuredData";
 import { siteConfig } from "@/data/site";
 
@@ -47,9 +48,6 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -91,6 +89,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${body.variable} ${display.variable} ${script.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ground text-text">
+        <SideRaysBackground />
         <StructuredData />
         <a
           href="#main"

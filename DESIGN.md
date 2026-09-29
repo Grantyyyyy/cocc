@@ -223,6 +223,8 @@ Headings use balanced wrapping; paragraphs use pretty wrapping. Times, dates and
 
 A single centered container of 88rem (1408px) with 16px side gutters, widening to 24px from 640px. The hero and the closing violet band are inset stages: they sit 12px from the viewport edge on phones (16px at 640px, 24px at 1024px), rounded, so the page opens and closes on a framed card rather than a full-bleed slab. The welcome photo band is the one deliberate full-bleed section.
 
+The site is six routes sharing one header, footer and closing band: Home (hero plus teasers that link out), About, Ministries, Watch, Events and Visit. Photography ships as WebP from `public/brand` and `public/img`; the PNG app icons stay PNG because the icon and social-image pipelines require it.
+
 Vertical rhythm: every content section takes the same 56px of top and bottom padding, 80px from 640px, so the gap between two sections on the ground is 112px on phones and 160px from 640px. Inset panels (verse of the day, closing band) sit on bottom padding only. A section heading sits 56px above its content; a poster rail sits 40px below its heading. Cards pad 32px, 40px from 640px.
 
 The hero is about 78svh on phones (min 34rem, max 56rem) and fills the viewport under the header from 1024px (`100svh - 6rem`, min 40rem). Its copy anchors bottom left and states the service day, time and venue, so the first viewport answers when and where at every width.
@@ -277,6 +279,9 @@ Tall 3:4 photograph tiles for ministries, 12px radius, raised placeholder. A gro
 
 ### Date Tile
 A square 12px-radius violet tile (72px on phones, 88px from 640px) holding the month in Violet Mist capitals above the day in Poppins 700 white. It leads each event row in a list separated by hairline rules.
+
+### Page Header
+Inner pages (/about, /ministries, /watch, /events, /visit) open with a shorter version of the home hero: the same inset 16px card with a hairline ring, one photograph under a ground scrim, and the same unveil and rise entrance. It is 46svh tall (min 24rem, max 34rem). The page title is the page's only h1, in Poppins 700 up to 5rem, with an optional lead and an optional action row (the gold pill only when the page's main action is external, such as Watch on Facebook). The home page keeps the full hero.
 
 ### Leader Cards
 "Meet our leaders" follows the standard section heading, with leaders below in a two-column grid from 640px (stacked on phones). Each photo is 4:3 at 12px radius, close to the source photos' own proportions so they are shown near their native resolution rather than enlarged, and cropped to keep the person in frame. The name is set in Poppins 700 below, with an optional muted role line. No role or bio is shown unless the church has confirmed it.

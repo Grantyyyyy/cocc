@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
+import Icon from "@/components/Icon";
 import { pillars } from "@/data/content";
 import { siteConfig } from "@/data/site";
 
-export default function Pillars() {
+export default function Pillars({ linkToAbout = false }: { linkToAbout?: boolean }) {
   return (
-    <section id="about" aria-labelledby="pillars-title" className="scroll-mt-24 py-14 sm:py-20">
+    <section aria-labelledby="pillars-title" className="py-14 sm:py-20">
       <div className="mx-auto grid max-w-[88rem] items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
         <div>
           <h2 id="pillars-title" className="max-w-[26ch] text-lg leading-8 text-muted">
@@ -20,6 +22,15 @@ export default function Pillars() {
               </li>
             ))}
           </ul>
+          {linkToAbout && (
+            <Link
+              href="/about"
+              className="group mt-10 inline-flex items-center gap-2 rounded-full border border-text/30 px-6 py-3 text-sm font-semibold text-text transition-[border-color,gap] duration-300 hover:gap-3 hover:border-text/60"
+            >
+              More about us
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </Link>
+          )}
         </div>
 
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-raised">

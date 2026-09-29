@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Icon from "@/components/Icon";
-import logo from "../../public/brand/cocc-logo.png";
+import logo from "../../public/brand/cocc-logo.webp";
 import { mapsUrl, navigation, siteConfig } from "@/data/site";
 
 export default function Footer() {
@@ -33,9 +33,9 @@ export default function Footer() {
             <ul className="mt-5 space-y-3 text-sm">
               {navigation.map((item) => (
                 <li key={item.href}>
-                  <a href={item.href} className="transition-colors duration-300 hover:text-text">
+                  <Link href={item.href} className="transition-colors duration-300 hover:text-text">
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>

@@ -1,6 +1,5 @@
 import Icon from "@/components/Icon";
 import PlanVisitForm from "@/components/PlanVisitForm";
-import SectionHeading from "@/components/SectionHeading";
 import { visitFaqs } from "@/data/content";
 import { mapsUrl, siteConfig } from "@/data/site";
 
@@ -9,15 +8,9 @@ const [venuePlace, ...venueDetail] = siteConfig.venue.name.split(", ");
 
 export default function Visit() {
   return (
-    <section id="visit" aria-labelledby="visit-title" className="scroll-mt-24 py-14 sm:py-20">
+    <section aria-label="Service details and visit form" className="py-14 sm:py-20">
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
-        <SectionHeading
-          id="visit-title"
-          title="Plan your visit"
-          description="Here is everything you need for your first Sunday. If you would rather just show up, that is completely fine too."
-        />
-
-        <div className="mt-16 grid items-start gap-x-16 gap-y-14 lg:grid-cols-2 [&>*]:min-w-0">
+        <div className="grid items-start gap-x-16 gap-y-14 lg:grid-cols-2 [&>*]:min-w-0">
           <div>
             <dl className="grid gap-y-10 sm:grid-cols-2 sm:gap-x-10">
               <div>

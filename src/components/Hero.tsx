@@ -1,6 +1,7 @@
+import Link from "next/link";
 import Image from "next/image";
 import Icon from "@/components/Icon";
-import worship from "../../public/img/worhsip.png";
+import worship from "../../public/img/worship.webp";
 import { primaryCta, secondaryCta, siteConfig } from "@/data/site";
 
 export default function Hero() {
@@ -45,20 +46,20 @@ export default function Hero() {
               className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
               style={{ animationDelay: "240ms" }}
             >
-              <a
+              <Link
                 href={primaryCta.href}
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
               >
                 {primaryCta.label}
                 <Icon name="arrow-right" className="h-4 w-4" />
-              </a>
-              <a
+              </Link>
+              <Link
                 href={secondaryCta.href}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-text/30 px-7 py-3.5 text-sm font-semibold text-text transition-colors duration-300 hover:border-text/60 hover:bg-text/10"
               >
                 <Icon name="play" className="h-4 w-4" />
                 {secondaryCta.label}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

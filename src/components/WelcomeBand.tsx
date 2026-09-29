@@ -1,31 +1,30 @@
-import Image from "next/image";
+import Link from "next/link";
 import Icon from "@/components/Icon";
-import baptism from "../../public/img/baptismal.png";
+import ScrollExpand from "@/components/react-bits/ScrollExpand";
+import baptism from "../../public/img/baptismal.webp";
 import { primaryCta, siteConfig } from "@/data/site";
 
 export default function WelcomeBand() {
   return (
-    <section
-      aria-labelledby="welcome-title"
-      className="relative isolate flex min-h-[34rem] items-center justify-center overflow-hidden px-4 py-24 text-center sm:min-h-[40rem]"
-    >
-      <div className="parallax absolute inset-x-0 -inset-y-[12%] -z-10" aria-hidden="true">
-        <Image
-          src={baptism}
-          alt=""
-          fill
-          placeholder="blur"
-          sizes="100vw"
-          className="object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 -z-10 bg-ground/60" aria-hidden="true" />
-
-      <div className="max-w-4xl">
+    <section aria-labelledby="welcome-title">
+      <ScrollExpand
+        useWindowScroll
+        src={baptism.src}
+        alt="A line of people in white shirts holding hands in the sea during a COCC baptism"
+        title="Welcome ka!"
+        scrollHint="Scroll"
+        startWidth={52}
+        startHeight={56}
+        startRadius={24}
+        scrollDistance={0.9}
+        holdDistance={0.25}
+        overlayScrim={0.6}
+        className="font-display"
+      >
         <h2
           id="welcome-title"
           lang="ceb"
-          className="font-script text-[clamp(2.75rem,7.5vw,6.5rem)] leading-[1.08] text-text"
+          className="font-script text-[clamp(2.75rem,7.5vw,6.5rem)] font-normal leading-[1.08] tracking-normal text-text"
         >
           {siteConfig.welcome.ceb.split(", ").map((phrase, index, all) => (
             <span key={phrase} className="block">
@@ -36,14 +35,14 @@ export default function WelcomeBand() {
         <p className="mx-auto mt-6 max-w-[40ch] font-display text-[clamp(1.125rem,2vw,1.5rem)] font-medium leading-snug text-text/90">
           {siteConfig.welcome.en}
         </p>
-        <a
+        <Link
           href={primaryCta.href}
           className="group mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
         >
           {primaryCta.label}
           <Icon name="arrow-right" className="h-4 w-4" />
-        </a>
-      </div>
+        </Link>
+      </ScrollExpand>
     </section>
   );
 }

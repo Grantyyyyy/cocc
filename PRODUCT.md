@@ -34,7 +34,7 @@ COCC meets on Sundays at Plaza Alemania, 2nd Floor, in Iligan City, and welcomes
 ## Brand Commitments
 
 - Name: Crossed Over Citi Church, short form COCC.
-- Logo: gold COCC monogram shaped as a fish, on violet (`public/brand/cocc-logo.png`).
+- Logo: gold COCC monogram shaped as a fish, on violet (`public/brand/cocc-logo.webp`; the PNG app icon `src/app/icon.png` feeds the social share image).
 - Colors: violet `#8214D9`, gold `#FCDC58`, white.
 - Tagline: "Building lives. Glorifying God."
 - Welcome line: "Kung kinsa man ka, unsa man ka, welcome ka!"

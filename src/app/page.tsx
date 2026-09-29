@@ -3,11 +3,9 @@ import CtaBand from "@/components/CtaBand";
 import DailyVerse from "@/components/DailyVerse";
 import Events from "@/components/Events";
 import Hero from "@/components/Hero";
-import Leaders from "@/components/Leaders";
 import Ministries from "@/components/Ministries";
 import Pillars from "@/components/Pillars";
 import Sermons from "@/components/Sermons";
-import Visit from "@/components/Visit";
 import WelcomeBand from "@/components/WelcomeBand";
 import { siteConfig } from "@/data/site";
 
@@ -28,12 +26,10 @@ export default function Home() {
       <Hero />
       <Ministries />
       <WelcomeBand />
-      <Pillars />
-      <Leaders />
+      <Pillars linkToAbout />
       <Sermons />
       <Events />
       <DailyVerse />
-      <Visit />
       <CtaBand />
     </>
   );

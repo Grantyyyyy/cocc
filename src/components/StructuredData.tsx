@@ -1,4 +1,3 @@
-import { visitFaqs } from "@/data/content";
 import { siteConfig } from "@/data/site";
 
 export default function StructuredData() {
@@ -13,7 +12,7 @@ export default function StructuredData() {
         slogan: siteConfig.tagline,
         description: siteConfig.description,
         url: siteConfig.url,
-        logo: `${siteConfig.url}/brand/cocc-logo.png`,
+        logo: `${siteConfig.url}/brand/cocc-logo.webp`,
         image: `${siteConfig.url}/opengraph-image`,
         address: {
           "@type": "PostalAddress",
@@ -42,15 +41,6 @@ export default function StructuredData() {
         publisher: { "@id": `${siteConfig.url}/#church` },
         inLanguage: "en-PH",
       },
-      {
-        "@type": "FAQPage",
-        "@id": `${siteConfig.url}/#faq`,
-        mainEntity: visitFaqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer },
-        })),
-      },
     ],
   };
 
@@ -59,5 +49,22 @@ export default function StructuredData() {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
     />
+  );
+}
+
+export function FaqStructuredData({ faqs }: { faqs: { question: string; answer: string }[] }) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${siteConfig.url}/visit#faq`,
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
   );
 }
