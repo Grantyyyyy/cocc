@@ -19,7 +19,7 @@ export default function Sermons() {
           <SectionHeading
             id="watch-title"
             title="Missed a Sunday?"
-            description="Messages go up on our Facebook page after every service. Watch one before your first visit."
+            description="Messages go up on our Facebook page after every service. The titles below are samples until real messages are linked."
           />
           <a
             href={siteConfig.watchUrl}

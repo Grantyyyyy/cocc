@@ -28,7 +28,8 @@ COCC meets on Sundays at Plaza Alemania, 2nd Floor, in Iligan City, and welcomes
 
 - Next.js 16 App Router, TypeScript, Tailwind v4. Content lives in `src/data/site.ts` and `src/data/content.ts`.
 - The visit form has no backend yet; it is a labeled demo.
-- Undecided: other weekly meetings, ministries, events, leader names and roles, street address, phone, email, domain. Current values for these are placeholders.
+- Confirmed by the user: phone (063) 224 0407, email coccyan@gmail.com, office at Crossed Over Center, 2nd Floor, Plaza Alemania, Iligan City.
+- Undecided: other weekly meetings, ministries, events, leader names and roles, domain. Current values for these are placeholders.
 
 ## Brand Commitments
 

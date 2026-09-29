@@ -19,7 +19,7 @@ Unresolved: real photography without baked text, other weekly meetings, leader n
 
 THESIS: Sunday Service presented like the headline date on an event tour, dark and cinematic, instead of the category default: a pastel church brochure with a banner hero and three feature cards.
 
-OWN-WORLD: violet-black ground `#0B0514`, brand violet `#8214D9` owning whole fields, lemon gold `#FCDC58` reserved for the one action, white type. Heavy geometric sans (Poppins, a crop of the church's own Sunday banner (leaders and Psalm 65:11) face) set huge and tight over a quiet body sans. Media sits in 16px-radius cards (12px for small posters). Raise from the cinema candidate: photographs are the only light source, so no glows, gradients-as-decoration or neon edges.
+OWN-WORLD: violet-black ground `#0B0514`, brand violet `#8214D9` owning whole fields, lemon gold `#FCDC58` reserved for the one action, white type. Heavy geometric sans (Poppins, the face on the church's own Sunday banner) set huge and tight over a quiet body sans (Geist). One brand-sourced script (Sacramento) is reserved for the Cebuano welcome line, which the church's banner also sets in script; it appears nowhere else except the footer echo of that same line. Media sits in 16px-radius cards (12px for small posters). Raise from the cinema candidate: photographs are the only light source, so no glows, gradients-as-decoration or neon edges.
 
 STORY: the visitor feels welcome, learns exactly when and where (Sunday, 9AM to 11AM, Plaza Alemania, 2nd Floor), sees what happens there, then plans a visit.
 

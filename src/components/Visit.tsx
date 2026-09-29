@@ -16,7 +16,7 @@ export default function Visit() {
           description="Here is everything you need for your first Sunday. If you would rather just show up, that is completely fine too."
         />
 
-        <div className="mt-16 grid gap-x-16 gap-y-14 lg:grid-cols-2 [&>*]:min-w-0">
+        <div className="mt-16 grid items-start gap-x-16 gap-y-14 lg:grid-cols-2 [&>*]:min-w-0">
           <div>
             <dl className="grid gap-y-10 sm:grid-cols-2 sm:gap-x-10">
               <div>
@@ -40,7 +40,7 @@ export default function Visit() {
                 href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
+                className="group inline-flex items-center gap-2 rounded-full border border-text/30 px-6 py-3 text-text transition-[border-color,background-color,gap] duration-300 hover:gap-3 hover:border-text/60 hover:bg-text/10"
               >
                 Get directions
                 <Icon name="arrow-right" className="h-4 w-4" />

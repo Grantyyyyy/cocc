@@ -17,7 +17,7 @@ export default function Events() {
         <SectionHeading
           id="events-title"
           title="Coming up"
-          description="Guests are welcome at every one of these."
+          description="Guests are welcome at every one of these. Dates shown are samples until the church confirms its calendar."
         />
 
         <ul className="mt-14 border-t border-line">

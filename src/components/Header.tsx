@@ -40,8 +40,8 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-[88rem] items-center justify-between gap-6 px-4 sm:px-6 lg:h-[4.5rem]">
         <Link href="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
           <Image src={logo} alt="" width={40} height={40} className="h-10 w-10 rounded-lg" />
-          <span className="font-display text-[0.8125rem] font-semibold uppercase tracking-[0.14em] text-text">
-            Crossed Over<span className="hidden sm:inline"> Citi Church</span>
+          <span className="font-display text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-text sm:text-[0.8125rem] sm:tracking-[0.14em]">
+            {siteConfig.name}
           </span>
         </Link>
 

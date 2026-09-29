@@ -19,7 +19,7 @@ export default function Hero() {
             className="-z-10 object-cover object-[40%_30%]"
           />
           <div
-            className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--ground)_0%,rgba(11,5,20,0.7)_38%,rgba(11,5,20,0.1)_75%),linear-gradient(to_right,rgba(11,5,20,0.65),transparent_60%)]"
+            className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(11,5,20,0.82)_0%,rgba(11,5,20,0.66)_38%,rgba(11,5,20,0.1)_75%),linear-gradient(to_right,rgba(11,5,20,0.65),transparent_60%)]"
             aria-hidden="true"
           />
 
@@ -36,7 +36,9 @@ export default function Hero() {
               <span lang="ceb" className="font-medium text-text">
                 {siteConfig.welcome.ceb}
               </span>{" "}
-              Whoever you are, there is a seat for you this Sunday.
+              Join us {siteConfig.service.day}s,{" "}
+              <span className="numeric">{siteConfig.service.time}</span>, at{" "}
+              {siteConfig.venue.name}, {siteConfig.venue.city}.
             </p>
             <div
               className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
@@ -68,9 +70,8 @@ export default function Hero() {
           <div className="flex items-center justify-between px-1 pb-3 pt-1">
             <h2
               id="this-sunday"
-              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold"
+              className="font-display text-sm font-semibold text-gold"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
               This Sunday
             </h2>
             <span className="text-xs text-muted numeric">{siteConfig.service.time}</span>

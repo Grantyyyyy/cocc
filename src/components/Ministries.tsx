@@ -8,12 +8,17 @@ export default function Ministries() {
       <PosterRail
         label="ministries"
         heading={
-          <h2
-            id="ministries-title"
-            className="font-display text-[clamp(1.75rem,3.4vw,2.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-text"
-          >
-            Find your place
-          </h2>
+          <div>
+            <h2
+              id="ministries-title"
+              className="font-display text-[clamp(1.75rem,3.4vw,2.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-text"
+            >
+              Find your place
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Sample ministries and photos until the church confirms them.
+            </p>
+          </div>
         }
       >
         {ministries.map((ministry) => (
