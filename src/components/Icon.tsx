@@ -1,5 +1,7 @@
 type IconName =
   | "arrow-right"
+  | "chevron-left"
+  | "chevron-right"
   | "play"
   | "phone"
   | "mail"
@@ -11,6 +13,8 @@ type IconName =
 
 const paths: Record<IconName, React.ReactNode> = {
   "arrow-right": <path d="M4 12h15m-5.5-5.5L19 12l-5.5 5.5" />,
+  "chevron-left": <path d="m14.5 6-6 6 6 6" />,
+  "chevron-right": <path d="m9.5 6 6 6-6 6" />,
   play: <path d="M8 5.6v12.8L19 12 8 5.6Z" strokeLinejoin="round" />,
   phone: (
     <path d="M6.2 4h3l1.4 3.6-2 1.5a10.5 10.5 0 0 0 5.3 5.3l1.5-2L19 13.8v3a2 2 0 0 1-2.2 2A15.4 15.4 0 0 1 4.2 6.2 2 2 0 0 1 6.2 4Z" />

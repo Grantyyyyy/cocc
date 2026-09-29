@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
-import { serviceTimes } from "@/data/content";
+import { siteConfig } from "@/data/site";
 
 const field =
-  "w-full min-w-0 rounded-xl border border-line bg-background px-3.5 py-2.5 text-sm font-normal text-ink transition-colors duration-200 hover:border-accent/60 focus:border-accent focus-visible:outline-accent-strong";
+  "w-full min-w-0 rounded-xl border border-line bg-ground px-3.5 py-3 text-sm font-normal text-text transition-colors duration-200 placeholder:text-muted/70 hover:border-text/35 focus:border-gold";
 
-const label = "flex min-w-0 flex-col gap-1.5 text-sm font-medium text-ink";
+const label = "flex min-w-0 flex-col gap-2 text-sm font-medium text-text";
 
 export default function PlanVisitForm() {
   const [status, setStatus] = useState<"idle" | "pending" | "done">("idle");
@@ -19,25 +19,22 @@ export default function PlanVisitForm() {
 
   if (status === "done") {
     return (
-      <div
-        role="status"
-        className="rounded-2xl border border-line bg-surface p-8 sm:p-10"
-      >
+      <div role="status" className="rounded-2xl bg-violet p-8 sm:p-10">
         <h3
           ref={confirmation}
           tabIndex={-1}
-          className="font-serif text-2xl font-semibold tracking-[-0.02em] text-ink"
+          className="font-display text-3xl font-bold tracking-[-0.03em] text-text"
         >
-          We&apos;ll be watching for you
+          See you on Sunday
         </h3>
-        <p className="mt-4 max-w-[52ch] leading-7 text-muted">
-          A host will email you before Sunday with parking directions and where to drop
-          off your kids. Nothing formal, just so you are not walking in cold.
+        <p className="mt-4 max-w-[48ch] leading-7 text-on-violet-muted">
+          A host will reach out before Sunday so you have a familiar face waiting at{" "}
+          {siteConfig.venue.name}.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent-strong underline decoration-accent/40 hover:decoration-accent-strong"
+          className="mt-8 text-sm font-semibold text-text underline decoration-text/40 hover:decoration-text"
         >
           Send another response
         </button>
@@ -54,13 +51,13 @@ export default function PlanVisitForm() {
         setStatus("pending");
         setTimeout(() => setStatus("done"), 600);
       }}
-      className="rounded-2xl border border-line bg-surface p-8 sm:p-10"
+      className="rounded-2xl bg-raised p-8 ring-1 ring-line sm:p-10"
     >
-      <h3 className="font-serif text-2xl font-semibold tracking-[-0.02em] text-ink">
-        Plan your visit
+      <h3 className="font-display text-2xl font-bold tracking-[-0.03em] text-text">
+        Tell us you are coming
       </h3>
-      <p className="mt-3 max-w-[48ch] leading-7 text-muted">
-        Tell us you are coming and a host will meet you at the door.
+      <p className="mt-3 max-w-[46ch] leading-7 text-muted">
+        A host will meet you at the entrance and save you a seat.
       </p>
 
       <fieldset disabled={pending} className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -79,37 +76,28 @@ export default function PlanVisitForm() {
             className={field}
           />
           <span id="email-help" className="text-xs font-normal leading-5 text-muted">
-            So a host can send you directions before Sunday.
+            So a host can reach you before Sunday.
           </span>
         </label>
         <label className={label}>
-          Which service?
-          <select
-            name="service"
-            defaultValue={`${serviceTimes[0].day} ${serviceTimes[0].time}`}
-            className={field}
-          >
-            {serviceTimes.map((service) => (
-              <option
-                key={`${service.day}-${service.time}`}
-                value={`${service.day} ${service.time}`}
-              >
-                {service.day} {service.time}, {service.title}
-              </option>
-            ))}
+          When are you coming?
+          <select name="when" defaultValue="This Sunday" className={field}>
+            <option>This Sunday</option>
+            <option>Next Sunday</option>
+            <option>Not sure yet</option>
           </select>
         </label>
         <label className={label}>
-          Kids joining you?
+          Bringing kids?
           <select name="kids" defaultValue="No" className={field}>
             <option>No</option>
-            <option>Yes, nursery age</option>
-            <option>Yes, elementary</option>
-            <option>Yes, students</option>
+            <option>Yes</option>
           </select>
         </label>
         <label className={`${label} sm:col-span-2`}>
-          Anything we should know? <span className="text-muted">(optional)</span>
+          <span>
+            Anything we should know? <span className="font-normal text-muted">(optional)</span>
+          </span>
           <textarea name="message" rows={3} className={field} />
         </label>
       </fieldset>
@@ -117,9 +105,9 @@ export default function PlanVisitForm() {
       <button
         type="submit"
         disabled={pending}
-        className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-white transition-[background-color,gap,opacity] duration-300 hover:gap-3 hover:bg-ink-hover disabled:cursor-not-allowed disabled:opacity-60"
+        className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-on-gold transition-[background-color,gap,opacity] duration-300 hover:gap-3 hover:bg-gold-hover disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {pending ? "Sending your details…" : "Let us know you're coming"}
+        {pending ? "Sending your details…" : "Save me a seat"}
         {!pending && <Icon name="arrow-right" className="h-4 w-4" />}
       </button>
       <p className="mt-4 text-xs leading-5 text-muted">

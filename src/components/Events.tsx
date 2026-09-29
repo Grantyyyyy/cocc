@@ -1,4 +1,3 @@
-import Icon from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import { events } from "@/data/content";
 
@@ -13,52 +12,42 @@ const parts = (value: string) => {
 
 export default function Events() {
   return (
-    <section id="events" className="scroll-mt-28 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="events" aria-labelledby="events-title" className="scroll-mt-24 py-20 sm:py-28">
+      <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         <SectionHeading
-          title="Upcoming events"
-          description="Guests are welcome at every one of these. No sign-up required unless noted."
+          id="events-title"
+          title="Coming up"
+          description="Guests are welcome at every one of these."
         />
 
-        <ul className="mt-16 border-t border-line">
+        <ul className="mt-14 border-t border-line">
           {events.map((event) => {
             const { month, day, weekday } = parts(event.date);
             return (
-              <li key={event.title} className="border-b border-line">
-                <article className="flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:gap-10">
-                  <time
-                    dateTime={event.date}
-                    className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-surface-muted numeric"
-                  >
-                    <span className="text-xs font-semibold tracking-[0.12em] text-accent-strong">
-                      {month}
-                    </span>
-                    <span className="font-serif text-2xl font-semibold text-ink">
-                      {day}
-                    </span>
-                  </time>
-
-                  <div className="flex-1">
-                    <h3 className="font-serif text-xl font-semibold tracking-[-0.02em] text-ink">
-                      {event.title}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted numeric">
-                      {weekday} · {event.time} · {event.location}
-                    </p>
-                    <p className="mt-3 max-w-[64ch] leading-7 text-muted">
-                      {event.description}
-                    </p>
-                  </div>
-
-                  <a
-                    href="#visit"
-                    className="group inline-flex w-fit shrink-0 items-center gap-2 rounded-full border border-ink px-5 py-2.5 text-sm font-semibold text-ink transition-[background-color,color,gap] duration-300 hover:gap-3 hover:bg-ink hover:text-white"
-                  >
-                    Details
-                    <Icon name="arrow-right" className="h-4 w-4" />
-                    <span className="sr-only">about {event.title}</span>
-                  </a>
-                </article>
+              <li
+                key={event.title}
+                className="grid grid-cols-[4.5rem_minmax(0,1fr)] items-center gap-x-6 gap-y-2 border-b border-line py-8 sm:grid-cols-[5.5rem_minmax(0,1fr)_minmax(0,1.2fr)] sm:gap-x-10"
+              >
+                <time
+                  dateTime={event.date}
+                  className="row-span-2 flex aspect-square flex-col items-center justify-center rounded-xl bg-violet numeric sm:row-span-1"
+                >
+                  <span className="text-xs font-semibold tracking-[0.12em] text-on-violet-muted">
+                    {month}
+                  </span>
+                  <span className="font-display text-2xl font-bold leading-none text-text sm:text-3xl">
+                    {day}
+                  </span>
+                </time>
+                <div>
+                  <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-text sm:text-2xl">
+                    {event.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted">
+                    {weekday} · {event.time} · {event.location}
+                  </p>
+                </div>
+                <p className="max-w-[52ch] leading-7 text-muted">{event.description}</p>
               </li>
             );
           })}

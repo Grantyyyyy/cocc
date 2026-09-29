@@ -1,9 +1,14 @@
 import { ImageResponse } from "next/og";
+import { join } from "node:path";
+import { readFile } from "node:fs/promises";
 import { siteConfig } from "@/data/site";
 
 export const alt = `${siteConfig.name}, ${siteConfig.tagline}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const logoData = await readFile(join(process.cwd(), "public/brand/cocc-logo.png"), "base64");
+const logoSrc = `data:image/png;base64,${logoData}`;
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -13,47 +18,22 @@ export default function OpengraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: 72,
-          background: "linear-gradient(135deg, #1b0c33 0%, #241041 45%, #8a6a12 100%)",
+          alignItems: "center",
+          gap: 64,
+          padding: 80,
+          background: "#8214d9",
           color: "#ffffff",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <div
-            style={{
-              width: 18,
-              height: 18,
-              borderRadius: 999,
-              background: "#c9a227",
-            }}
-          />
-          <div
-            style={{
-              fontSize: 26,
-              letterSpacing: 6,
-              textTransform: "uppercase",
-              color: "#e8d9a8",
-            }}
-          >
-            {`${siteConfig.address.city}, ${siteConfig.address.region}`}
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <div style={{ fontSize: 68, lineHeight: 1.1, fontWeight: 600 }}>
-            {siteConfig.name}
-          </div>
-          <div style={{ fontSize: 34, color: "#d9cbe8", maxWidth: 900 }}>
+        <img src={logoSrc} width={340} height={340} style={{ borderRadius: 32 }} alt="" />
+        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+          <div style={{ fontSize: 30, color: "#efe4fc" }}>{siteConfig.name}</div>
+          <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -2 }}>
             {siteConfig.tagline}
           </div>
-        </div>
-
-        <div style={{ display: "flex", fontSize: 28, color: "#e8d9a8", gap: 32 }}>
-          <span>{"Sundays 9:00 & 11:00 AM"}</span>
-          <span style={{ color: "#c9a227" }}>|</span>
-          <span>{new URL(siteConfig.url).host}</span>
+          <div style={{ display: "flex", fontSize: 30, color: "#fcdc58" }}>
+            {`Sundays ${siteConfig.service.time}, ${siteConfig.venue.name}`}
+          </div>
         </div>
       </div>
     ),

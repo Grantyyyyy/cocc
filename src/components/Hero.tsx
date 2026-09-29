@@ -1,74 +1,103 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
-import { primaryCta, secondaryCta, siteConfig } from "@/data/site";
-import { serviceTimes } from "@/data/content";
+import leaders from "../../public/brand/sunday-leaders.jpg";
+import worship from "../../public/img/worhsip.png";
+import { mapsUrl, primaryCta, secondaryCta, siteConfig } from "@/data/site";
 
 export default function Hero() {
   return (
-    <section className="on-dark relative isolate overflow-hidden bg-ink">
-      <Image
-        src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=1920&q=75"
-        alt="Congregation with hands raised during Sunday worship"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[60%_center] opacity-55"
-      />
-      <div
-        className="absolute inset-0 bg-[linear-gradient(105deg,var(--ink)_16%,rgba(36,16,65,0.84)_52%,rgba(36,16,65,0.32)_100%)]"
-        aria-hidden="true"
-      />
-
-      <div className="relative mx-auto max-w-7xl px-4 py-28 sm:px-6 sm:py-36 lg:px-8 lg:py-44">
-        <div className="max-w-[46rem]">
-          <h1 className="rise font-serif text-[clamp(2.5rem,6.5vw,4.5rem)] font-semibold leading-[1.03] tracking-[-0.03em] text-on-ink">
-            You are welcome here, exactly as you are.
-          </h1>
-
-          <p
-            className="rise mt-7 max-w-[54ch] text-lg leading-8 text-on-ink-muted"
-            style={{ animationDelay: "90ms" }}
-          >
-            {siteConfig.name} is a family in {siteConfig.address.city} learning to follow
-            Jesus together through honest teaching, real community and love for our
-            city. Come as a guest, leave as a friend.
-          </p>
-
+    <section className="px-3 pt-2 sm:px-4 lg:px-6">
+      <div className="relative mx-auto max-w-[88rem]">
+        <div className="unveil relative isolate flex h-[78svh] min-h-[34rem] max-h-[56rem] overflow-hidden rounded-2xl bg-violet-deep lg:h-[calc(100svh-6rem)] lg:min-h-[40rem]">
+          <Image
+            src={worship}
+            alt="The COCC worship team leading the congregation, hands raised, during a Sunday service"
+            fill
+            preload
+            placeholder="blur"
+            sizes="(min-width: 1408px) 88rem, 100vw"
+            className="-z-10 object-cover object-[40%_30%]"
+          />
           <div
-            className="rise mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-            style={{ animationDelay: "180ms" }}
-          >
-            <a
-              href={primaryCta.href}
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-on-accent transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-accent-hover"
+            className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,var(--ground)_0%,rgba(11,5,20,0.7)_38%,rgba(11,5,20,0.1)_75%),linear-gradient(to_right,rgba(11,5,20,0.65),transparent_60%)]"
+            aria-hidden="true"
+          />
+
+          <div className="mt-auto w-full p-6 sm:p-10 lg:p-14 lg:pr-[28rem]">
+            <h1 className="rise font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-text lg:text-[clamp(3.5rem,5.4vw,6rem)]">
+              Building lives.
+              <br />
+              Glorifying God.
+            </h1>
+            <p
+              className="rise mt-6 max-w-[44ch] text-lg leading-8 text-text/85"
+              style={{ animationDelay: "120ms" }}
             >
-              {primaryCta.label}
-              <Icon name="arrow-right" className="h-4 w-4" />
-            </a>
-            <a
-              href={secondaryCta.href}
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-on-ink/25 px-7 py-3.5 text-sm font-semibold text-on-ink transition-colors duration-300 hover:border-on-ink/50 hover:bg-on-ink/10"
+              <span lang="ceb" className="font-medium text-text">
+                {siteConfig.welcome.ceb}
+              </span>{" "}
+              Whoever you are, there is a seat for you this Sunday.
+            </p>
+            <div
+              className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+              style={{ animationDelay: "240ms" }}
             >
-              <Icon name="play" className="h-4 w-4" />
-              {secondaryCta.label}
+              <a
+                href={primaryCta.href}
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
+              >
+                {primaryCta.label}
+                <Icon name="arrow-right" className="h-4 w-4" />
+              </a>
+              <a
+                href={secondaryCta.href}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-text/30 px-7 py-3.5 text-sm font-semibold text-text transition-colors duration-300 hover:border-text/60 hover:bg-text/10"
+              >
+                <Icon name="play" className="h-4 w-4" />
+                {secondaryCta.label}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <aside
+          aria-labelledby="this-sunday"
+          className="rise mt-3 rounded-xl bg-raised p-3 ring-1 ring-line lg:absolute lg:bottom-14 lg:right-14 lg:mt-0 lg:w-[23rem] lg:bg-ground"
+          style={{ animationDelay: "360ms" }}
+        >
+          <div className="flex items-center justify-between px-1 pb-3 pt-1">
+            <h2
+              id="this-sunday"
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-gold"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-gold" aria-hidden="true" />
+              This Sunday
+            </h2>
+            <span className="text-xs text-muted numeric">{siteConfig.service.time}</span>
+          </div>
+          <Image
+            src={leaders}
+            alt="Two COCC church leaders preaching on a Sunday, beside Psalm 65:11"
+            placeholder="blur"
+            sizes="(min-width: 1024px) 23rem, 100vw"
+            className="w-full rounded-lg"
+          />
+          <div className="flex items-center justify-between gap-4 px-1 pb-1 pt-3">
+            <p className="text-sm leading-5 text-text">
+              {siteConfig.venue.name}
+              <span className="block text-muted">{siteConfig.venue.city}</span>
+            </p>
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-text/10 px-4 py-2 text-xs font-semibold text-text transition-colors duration-300 hover:bg-text/20"
+            >
+              Get directions
+              <Icon name="arrow-right" className="h-3.5 w-3.5" />
             </a>
           </div>
-
-          <dl
-            className="rise mt-16 grid max-w-2xl gap-x-10 gap-y-6 border-t border-on-ink/15 pt-8 sm:grid-cols-3"
-            style={{ animationDelay: "270ms" }}
-          >
-            {serviceTimes.map((service) => (
-              <div key={`${service.day}-${service.time}`}>
-                <dt className="font-serif text-2xl text-on-ink numeric">
-                  {service.time}
-                </dt>
-                <dd className="mt-1 text-sm font-medium text-on-ink">{service.title}</dd>
-                <dd className="text-sm text-on-ink-muted">{service.day}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
+        </aside>
       </div>
     </section>
   );

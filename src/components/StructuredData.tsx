@@ -1,7 +1,5 @@
-import { events, serviceTimes, visitFaqs } from "@/data/content";
+import { visitFaqs } from "@/data/content";
 import { siteConfig } from "@/data/site";
-
-const dayUrl = (day: string) => `https://schema.org/${day}`;
 
 export default function StructuredData() {
   const graph = {
@@ -12,30 +10,28 @@ export default function StructuredData() {
         "@id": `${siteConfig.url}/#church`,
         name: siteConfig.name,
         alternateName: siteConfig.shortName,
+        slogan: siteConfig.tagline,
         description: siteConfig.description,
         url: siteConfig.url,
-        telephone: siteConfig.phone,
-        email: siteConfig.email,
+        logo: `${siteConfig.url}/brand/cocc-logo.png`,
         image: `${siteConfig.url}/opengraph-image`,
         address: {
           "@type": "PostalAddress",
-          streetAddress: siteConfig.address.street,
-          addressLocality: siteConfig.address.city,
-          addressRegion: siteConfig.address.region,
-          postalCode: siteConfig.address.postalCode,
-          addressCountry: siteConfig.address.country,
+          streetAddress: siteConfig.venue.name,
+          addressLocality: siteConfig.venue.city,
+          addressRegion: siteConfig.venue.region,
+          postalCode: siteConfig.venue.postalCode,
+          addressCountry: siteConfig.venue.country,
         },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: siteConfig.address.latitude,
-          longitude: siteConfig.address.longitude,
-        },
-        sameAs: siteConfig.socials.map((social) => social.href),
-        openingHoursSpecification: serviceTimes.map((service) => ({
+        telephone: siteConfig.phone,
+        email: siteConfig.email,
+        sameAs: [siteConfig.facebook],
+        openingHoursSpecification: {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek: dayUrl(service.day),
-          opens: service.time,
-        })),
+          dayOfWeek: "https://schema.org/Sunday",
+          opens: siteConfig.service.opens,
+          closes: siteConfig.service.closes,
+        },
       },
       {
         "@type": "WebSite",
@@ -44,29 +40,8 @@ export default function StructuredData() {
         name: siteConfig.name,
         description: siteConfig.description,
         publisher: { "@id": `${siteConfig.url}/#church` },
-        inLanguage: "en-US",
+        inLanguage: "en-PH",
       },
-      ...events.map((event) => ({
-        "@type": "Event",
-        name: event.title,
-        startDate: `${event.date}T${event.time.includes("AM") ? "09:00" : "19:00"}:00-05:00`,
-        description: event.description,
-        eventStatus: "https://schema.org/EventScheduled",
-        eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-        organizer: { "@id": `${siteConfig.url}/#church` },
-        location: {
-          "@type": "Place",
-          name: `${siteConfig.name}, ${event.location}`,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: siteConfig.address.street,
-            addressLocality: siteConfig.address.city,
-            addressRegion: siteConfig.address.region,
-            postalCode: siteConfig.address.postalCode,
-            addressCountry: siteConfig.address.country,
-          },
-        },
-      })),
       {
         "@type": "FAQPage",
         "@id": `${siteConfig.url}/#faq`,

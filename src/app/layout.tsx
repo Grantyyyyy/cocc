@@ -1,27 +1,37 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Geist, Poppins, Sacramento } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StructuredData from "@/components/StructuredData";
 import { siteConfig } from "@/data/site";
 
-const body = Inter({
+const body = Geist({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
 });
 
-const display = Fraunces({
-  variable: "--font-display",
+const display = Poppins({
+  variable: "--font-display-face",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
+
+const script = Sacramento({
+  variable: "--font-script-face",
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
+
+const title = `${siteConfig.name} | ${siteConfig.tagline}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    default: title,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -30,12 +40,9 @@ export const metadata: Metadata = {
     "church in Iligan City",
     "COCC Iligan",
     "Crossed Over Citi Church",
-    "Sunday worship service",
-    "Christian community church",
-    "kids ministry",
-    "community groups",
-    "sermons online",
-    siteConfig.name,
+    "Plaza Alemania Iligan",
+    "Sunday service Iligan City",
+    "Christian church Lanao del Norte",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -48,12 +55,12 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    title,
     description: siteConfig.description,
   },
   robots: {
@@ -71,7 +78,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#241041",
+  themeColor: "#0b0514",
+  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
 };
@@ -80,13 +88,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${body.variable} ${display.variable} h-full antialiased`}
+      className={`${body.variable} ${display.variable} ${script.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex min-h-full flex-col bg-ground text-text">
         <StructuredData />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-gold"
         >
           Skip to content
         </a>

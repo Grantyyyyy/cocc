@@ -1,28 +1,64 @@
 import Icon from "@/components/Icon";
-import SectionHeading from "@/components/SectionHeading";
 import PlanVisitForm from "@/components/PlanVisitForm";
+import SectionHeading from "@/components/SectionHeading";
 import { visitFaqs } from "@/data/content";
-import { siteConfig } from "@/data/site";
+import { mapsUrl, siteConfig } from "@/data/site";
 
-const mapsQuery = encodeURIComponent(
-  `${siteConfig.address.street}, ${siteConfig.address.city}, ${siteConfig.address.region} ${siteConfig.address.postalCode}`,
-);
+const { office } = siteConfig;
 
 export default function Visit() {
   return (
-    <section id="visit" className="scroll-mt-28 bg-surface-muted py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="visit" aria-labelledby="visit-title" className="scroll-mt-24 py-20 sm:py-28">
+      <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         <SectionHeading
-          title="Your first Sunday, with no surprises"
-          description="Here is exactly what to expect. And if you would rather just show up unannounced, that is completely fine too."
+          id="visit-title"
+          title="Plan your visit"
+          description="Here is everything you need for your first Sunday. If you would rather just show up, that is completely fine too."
         />
 
-        <div className="mt-16 grid gap-x-16 gap-y-12 lg:grid-cols-2 [&>*]:min-w-0">
+        <div className="mt-16 grid gap-x-16 gap-y-14 lg:grid-cols-2 [&>*]:min-w-0">
           <div>
-            <dl className="divide-y divide-line border-y border-line">
+            <dl className="grid gap-y-10 sm:grid-cols-2 sm:gap-x-10">
+              <div>
+                <dt className="text-sm font-medium text-muted">When</dt>
+                <dd className="mt-2 font-display text-3xl font-semibold tracking-[-0.03em] text-text numeric">
+                  {siteConfig.service.time}
+                </dd>
+                <dd className="mt-1 text-text">Every {siteConfig.service.day}</dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-muted">Where</dt>
+                <dd className="mt-2 font-display text-3xl font-semibold tracking-[-0.03em] text-text">
+                  {siteConfig.venue.name}
+                </dd>
+                <dd className="mt-1 text-text">{siteConfig.venue.city}</dd>
+              </div>
+            </dl>
+
+            <div className="mt-10 flex flex-wrap gap-3 text-sm font-semibold">
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
+              >
+                Get directions
+                <Icon name="arrow-right" className="h-4 w-4" />
+              </a>
+              <a
+                href={siteConfig.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-text/30 px-6 py-3 text-text transition-colors duration-300 hover:border-text/60 hover:bg-text/10"
+              >
+                Message us on Facebook
+              </a>
+            </div>
+
+            <dl className="mt-14 border-t border-line">
               {visitFaqs.map((faq) => (
-                <div key={faq.question} className="py-7">
-                  <dt className="font-serif text-xl font-semibold tracking-[-0.02em] text-ink">
+                <div key={faq.question} className="border-b border-line py-6">
+                  <dt className="font-display text-lg font-semibold tracking-[-0.015em] text-text">
                     {faq.question}
                   </dt>
                   <dd className="mt-2 max-w-[60ch] leading-7 text-muted">{faq.answer}</dd>
@@ -30,37 +66,40 @@ export default function Visit() {
               ))}
             </dl>
 
-            <div className="mt-10 rounded-2xl border border-line bg-surface p-8">
-              <h3 className="font-serif text-xl font-semibold tracking-[-0.02em] text-ink">
-                Find us
-              </h3>
-              <address className="mt-3 flex gap-3 not-italic leading-7 text-muted">
-                <Icon name="pin" className="mt-1 h-5 w-5 shrink-0 text-accent-strong" />
-                <span>
-                  {siteConfig.address.street}
+            <div className="mt-10 grid gap-6 text-sm sm:grid-cols-2">
+              <div className="flex gap-3">
+                <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <address className="not-italic leading-6 text-muted">
+                  <span className="font-medium text-text">Church office</span>
                   <br />
-                  {siteConfig.address.city}, {siteConfig.address.region}{" "}
-                  <span className="numeric">{siteConfig.address.postalCode}</span>
-                </span>
-              </address>
-              <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-white transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-ink-hover"
-                >
-                  Get directions
-                  <Icon name="arrow-right" className="h-4 w-4" />
-                </a>
-                <a
-                  href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-ink px-5 py-2.5 text-ink transition-colors duration-300 hover:bg-ink hover:text-white"
-                >
-                  <Icon name="phone" className="h-4 w-4" />
-                  Call the office
-                </a>
+                  {office.name}
+                  <br />
+                  {office.street}
+                  <br />
+                  {office.city}, {office.region}{" "}
+                  <span className="numeric">{office.postalCode}</span>
+                </address>
               </div>
+              <ul className="space-y-3">
+                <li className="flex gap-3">
+                  <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <a
+                    href={`tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`}
+                    className="text-text underline decoration-text/30 hover:decoration-gold numeric"
+                  >
+                    {siteConfig.phone}
+                  </a>
+                </li>
+                <li className="flex gap-3">
+                  <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="break-all text-text underline decoration-text/30 hover:decoration-gold"
+                  >
+                    {siteConfig.email}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
 

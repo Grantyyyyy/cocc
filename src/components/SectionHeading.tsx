@@ -1,29 +1,27 @@
 export default function SectionHeading({
+  id,
   title,
   description,
   align = "left",
-  tone = "light",
 }: {
+  id?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
-  tone?: "light" | "dark";
 }) {
-  const dark = tone === "dark";
   return (
-    <div className={align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
       <h2
-        className={`font-serif text-3xl font-semibold leading-[1.15] tracking-[-0.025em] sm:text-4xl ${
-          dark ? "text-on-ink" : "text-ink"
-        }`}
+        id={id}
+        className="font-display text-[clamp(2rem,4.2vw,3.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-text"
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-5 max-w-[62ch] text-[1.0625rem] leading-8 ${
-            dark ? "text-on-ink-muted" : "text-muted"
-          } ${align === "center" ? "mx-auto" : ""}`}
+          className={`mt-5 max-w-[56ch] text-[1.0625rem] leading-8 text-muted ${
+            align === "center" ? "mx-auto" : ""
+          }`}
         >
           {description}
         </p>

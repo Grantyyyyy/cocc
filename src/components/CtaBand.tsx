@@ -1,36 +1,34 @@
 import Icon from "@/components/Icon";
-import { primaryCta, secondaryCta } from "@/data/site";
-import { serviceTimes } from "@/data/content";
-
-const sundayTimes = serviceTimes
-  .filter((service) => service.day === "Sunday")
-  .map((service) => service.time)
-  .join(" and ");
+import { primaryCta, secondaryCta, siteConfig } from "@/data/site";
 
 export default function CtaBand() {
   return (
-    <section className="on-gold bg-accent">
-      <div className="mx-auto flex max-w-7xl flex-col items-start gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8 lg:py-24">
-        <div className="max-w-2xl">
-          <h2 className="font-serif text-3xl font-semibold leading-[1.15] tracking-[-0.025em] text-on-accent sm:text-4xl">
+    <section aria-labelledby="cta-title" className="px-3 pb-3 sm:px-4 sm:pb-4 lg:px-6 lg:pb-6">
+      <div className="mx-auto flex max-w-[88rem] flex-col items-start gap-10 rounded-2xl bg-violet px-6 py-16 sm:px-10 lg:flex-row lg:items-end lg:justify-between lg:px-14 lg:py-20">
+        <div className="max-w-3xl">
+          <h2
+            id="cta-title"
+            className="font-display text-[clamp(2.25rem,5vw,4.25rem)] font-bold leading-[1.02] tracking-[-0.035em] text-text"
+          >
             This Sunday, there is a seat saved for you.
           </h2>
-          <p className="mt-5 max-w-[54ch] leading-8 text-on-accent-muted">
-            <span className="numeric">{sundayTimes}</span>. Come a few minutes early,
-            grab a coffee, and let a host show you around.
+          <p className="mt-5 max-w-[50ch] text-lg leading-8 text-on-violet-muted">
+            <span className="numeric">{siteConfig.service.time}</span> at{" "}
+            {siteConfig.venue.name}, {siteConfig.venue.city}. Come a few minutes early and
+            let a host show you around.
           </p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
+        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
           <a
             href={primaryCta.href}
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-ink-hover"
+            className="group inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-3.5 text-sm font-semibold text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover"
           >
             {primaryCta.label}
             <Icon name="arrow-right" className="h-4 w-4" />
           </a>
           <a
             href={secondaryCta.href}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-on-accent/35 px-7 py-3.5 text-sm font-semibold text-on-accent transition-colors duration-300 hover:border-on-accent hover:bg-on-accent/10"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-text/40 px-7 py-3.5 text-sm font-semibold text-text transition-colors duration-300 hover:border-text hover:bg-text/10"
           >
             <Icon name="play" className="h-4 w-4" />
             {secondaryCta.label}

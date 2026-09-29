@@ -1,33 +1,36 @@
 import type { Metadata } from "next";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import ServiceTimes from "@/components/ServiceTimes";
-import Ministries from "@/components/Ministries";
-import Sermons from "@/components/Sermons";
-import Events from "@/components/Events";
-import Testimonials from "@/components/Testimonials";
-import Staff from "@/components/Staff";
-import Visit from "@/components/Visit";
 import CtaBand from "@/components/CtaBand";
+import DailyVerse from "@/components/DailyVerse";
+import Events from "@/components/Events";
+import Hero from "@/components/Hero";
+import Ministries from "@/components/Ministries";
+import Pillars from "@/components/Pillars";
+import Sermons from "@/components/Sermons";
+import Visit from "@/components/Visit";
+import WelcomeBand from "@/components/WelcomeBand";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: `${siteConfig.tagline} | ${siteConfig.address.city} Church`,
+  title: {
+    absolute: `${siteConfig.name} | Sundays at ${siteConfig.venue.name}, ${siteConfig.venue.city}`,
+  },
   description: siteConfig.description,
   alternates: { canonical: "/" },
 };
+
+// Re-generate hourly so the verse of the day rolls over at midnight (Manila).
+export const revalidate = 3600;
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <ServiceTimes />
       <Ministries />
+      <WelcomeBand />
+      <Pillars />
       <Sermons />
       <Events />
-      <Testimonials />
-      <Staff />
+      <DailyVerse />
       <Visit />
       <CtaBand />
     </>
