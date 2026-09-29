@@ -13,7 +13,7 @@ const formatDate = (value: string) =>
 
 export default function Sermons() {
   return (
-    <section id="watch" aria-labelledby="watch-title" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="watch" aria-labelledby="watch-title" className="scroll-mt-24 py-14 sm:py-20">
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading

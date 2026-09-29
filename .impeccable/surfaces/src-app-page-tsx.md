@@ -11,7 +11,7 @@ Scope: the single landing page at `/`. Visitor mode: Persuade.
 
 Audience and job: someone in Iligan City, usually on a phone from Facebook, deciding whether to come to Sunday Service. Action: plan a visit (secondary: watch online). Proof on hand: the church's logo, its Sunday banner, the real service time and venue. Constraints: no em dashes in copy; placeholders stay labeled; no invented leader names, figures or testimonials presented as real.
 
-Memorable moment: the inset hero card and the "This Sunday" poster tile carrying a crop of the church's own Sunday banner (leaders and Psalm 65:11).
+Memorable moment: the inset hero card with the church's own worship photograph, and the baptism band carrying the Cebuano welcome.
 
 Unresolved: real photography without baked text, other weekly meetings, leader names, street address, contact details.
 
@@ -23,7 +23,7 @@ OWN-WORLD: violet-black ground `#0B0514`, brand violet `#8214D9` owning whole fi
 
 STORY: the visitor feels welcome, learns exactly when and where (Sunday, 9AM to 11AM, Plaza Alemania, 2nd Floor), sees what happens there, then plans a visit.
 
-FIRST VIEWPORT: slim bar with logo left, links centered, gold pill right. Below it an inset rounded hero card about 88vh tall with a worship photo; bottom-left headline "Building lives. Glorifying God." at up to 6rem with a gold pill; bottom-right a "This Sunday" poster tile showing the church banner with time and venue.
+FIRST VIEWPORT: slim bar with logo left, links centered, gold pill right. Below it an inset rounded hero card about 88vh tall with a worship photo; bottom-left headline "Building lives. Glorifying God." at up to 6rem, a lead that states the day, time and venue, and a gold pill. (The "This Sunday" tile was removed at the user's request on 2026-09-29.)
 
 FORM: event tour page, user-pinned reference (Tony Robbins homepage), position 3 on the ordered list, seed key 097541a5. Signature interaction: a scroll-snapping poster rail with arrow controls. Motion grammar: one orchestrated hero entrance, nothing else animates on load.
 

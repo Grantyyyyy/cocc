@@ -3,6 +3,7 @@ import CtaBand from "@/components/CtaBand";
 import DailyVerse from "@/components/DailyVerse";
 import Events from "@/components/Events";
 import Hero from "@/components/Hero";
+import Leaders from "@/components/Leaders";
 import Ministries from "@/components/Ministries";
 import Pillars from "@/components/Pillars";
 import Sermons from "@/components/Sermons";
@@ -28,6 +29,7 @@ export default function Home() {
       <Ministries />
       <WelcomeBand />
       <Pillars />
+      <Leaders />
       <Sermons />
       <Events />
       <DailyVerse />

@@ -5,10 +5,11 @@ import { visitFaqs } from "@/data/content";
 import { mapsUrl, siteConfig } from "@/data/site";
 
 const { office } = siteConfig;
+const [venuePlace, ...venueDetail] = siteConfig.venue.name.split(", ");
 
 export default function Visit() {
   return (
-    <section id="visit" aria-labelledby="visit-title" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="visit" aria-labelledby="visit-title" className="scroll-mt-24 py-14 sm:py-20">
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         <SectionHeading
           id="visit-title"
@@ -29,9 +30,11 @@ export default function Visit() {
               <div>
                 <dt className="text-sm font-medium text-muted">Where</dt>
                 <dd className="mt-2 font-display text-3xl font-semibold tracking-[-0.03em] text-text">
-                  {siteConfig.venue.name}
+                  {venuePlace}
                 </dd>
-                <dd className="mt-1 text-text">{siteConfig.venue.city}</dd>
+                <dd className="mt-1 text-text">
+                  {[...venueDetail, siteConfig.venue.city].join(", ")}
+                </dd>
               </div>
             </dl>
 

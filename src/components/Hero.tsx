@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Icon from "@/components/Icon";
-import leaders from "../../public/brand/sunday-leaders.jpg";
 import worship from "../../public/img/worhsip.png";
-import { mapsUrl, primaryCta, secondaryCta, siteConfig } from "@/data/site";
+import { primaryCta, secondaryCta, siteConfig } from "@/data/site";
 
 export default function Hero() {
   return (
@@ -25,8 +24,8 @@ export default function Hero() {
             aria-hidden="true"
           />
 
-          <div className="mt-auto w-full p-6 sm:p-10 lg:p-14 lg:pr-[28rem]">
-            <h1 className="rise font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-text lg:text-[clamp(3.5rem,5.4vw,6rem)]">
+          <div className="mt-auto w-full p-6 sm:p-10 lg:p-14">
+            <h1 className="rise font-display text-[clamp(2.75rem,7vw,6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-text">
               Building lives.
               <br />
               Glorifying God.
@@ -64,43 +63,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <aside
-          aria-labelledby="this-sunday"
-          className="rise mt-3 rounded-xl bg-raised p-3 ring-1 ring-line lg:absolute lg:bottom-14 lg:right-14 lg:mt-0 lg:w-[23rem] lg:bg-ground"
-          style={{ animationDelay: "360ms" }}
-        >
-          <div className="flex items-center justify-between px-1 pb-3 pt-1">
-            <h2
-              id="this-sunday"
-              className="font-display text-sm font-semibold text-gold"
-            >
-              This Sunday
-            </h2>
-            <span className="text-xs text-muted numeric">{siteConfig.service.time}</span>
-          </div>
-          <Image
-            src={leaders}
-            alt="Two COCC church leaders preaching on a Sunday, beside Psalm 65:11"
-            placeholder="blur"
-            sizes="(min-width: 1024px) 23rem, 100vw"
-            className="w-full rounded-lg"
-          />
-          <div className="flex items-center justify-between gap-4 px-1 pb-1 pt-3">
-            <p className="text-sm leading-5 text-text">
-              {siteConfig.venue.name}
-              <span className="block text-muted">{siteConfig.venue.city}</span>
-            </p>
-            <a
-              href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-text/10 px-4 py-2 text-xs font-semibold text-text transition-colors duration-300 hover:bg-text/20"
-            >
-              Get directions
-              <Icon name="arrow-right" className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </aside>
       </div>
     </section>
   );

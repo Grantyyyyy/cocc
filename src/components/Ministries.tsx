@@ -4,7 +4,7 @@ import { ministries } from "@/data/content";
 
 export default function Ministries() {
   return (
-    <section id="ministries" aria-labelledby="ministries-title" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="ministries" aria-labelledby="ministries-title" className="scroll-mt-24 py-14 sm:py-20">
       <PosterRail
         label="ministries"
         heading={

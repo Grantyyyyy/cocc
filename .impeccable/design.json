@@ -235,7 +235,7 @@
       {
         "name": "ring-hairline",
         "value": "0 0 0 1px var(--line)",
-        "purpose": "The only box-shadow: a 1px ring in the line color separating the hero stage, the This Sunday tile and the visit form from the ground. No drop shadows exist."
+        "purpose": "The only box-shadow: a 1px ring in the line color separating the hero stage and the visit form from the ground. No drop shadows exist."
       }
     ],
     "motion": [
@@ -252,7 +252,7 @@
       {
         "name": "rise",
         "value": "1.1s: from opacity 0, translateY(1.75rem), blur(10px); staggered 0, 120, 240, 360ms",
-        "purpose": "Hero headline, lead, actions and This Sunday tile; only under prefers-reduced-motion: no-preference."
+        "purpose": "Hero headline, lead and actions; only under prefers-reduced-motion: no-preference."
       },
       {
         "name": "state-color",

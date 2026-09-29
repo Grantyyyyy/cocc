@@ -1,4 +1,31 @@
+import type { StaticImageData } from "next/image";
+import pastorBayani from "../../public/brand/pastor.png";
+import pastoraAngie from "../../public/brand/pastora.png";
+
 export const pillars = ["Worship", "The Word", "Prayer", "Family", "Community", "Mission"];
+
+type Leader = {
+  name: string;
+  role?: string;
+  image: StaticImageData;
+  imageAlt: string;
+  focus: string;
+};
+
+export const leaders: Leader[] = [
+  {
+    name: "Pastor Bayani Areola",
+    image: pastorBayani,
+    imageAlt: "Pastor Bayani Areola speaking into a microphone in front of the congregation",
+    focus: "object-[78%_center]",
+  },
+  {
+    name: "Pastora Angie Areola",
+    image: pastoraAngie,
+    imageAlt: "Pastora Angie Areola preaching with a microphone, one hand reaching out",
+    focus: "object-[18%_center]",
+  },
+];
 
 export const ministries = [
   {

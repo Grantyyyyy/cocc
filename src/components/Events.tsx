@@ -12,7 +12,7 @@ const parts = (value: string) => {
 
 export default function Events() {
   return (
-    <section id="events" aria-labelledby="events-title" className="scroll-mt-24 py-20 sm:py-28">
+    <section id="events" aria-labelledby="events-title" className="scroll-mt-24 py-14 sm:py-20">
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         <SectionHeading
           id="events-title"

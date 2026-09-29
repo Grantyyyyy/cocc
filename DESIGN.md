@@ -88,8 +88,8 @@ spacing:
   card: "32px"
   card-wide: "40px"
   stack: "56px"
-  section: "80px"
-  section-wide: "112px"
+  section: "56px"
+  section-wide: "80px"
 components:
   button-primary:
     backgroundColor: "{colors.gold}"
@@ -105,11 +105,6 @@ components:
     typography: "{typography.label}"
     rounded: "{rounded.full}"
     padding: "14px 28px"
-  button-soft:
-    backgroundColor: "rgba(255, 255, 255, 0.1)"
-    textColor: "{colors.text}"
-    rounded: "{rounded.full}"
-    padding: "8px 16px"
   button-icon:
     textColor: "{colors.text}"
     rounded: "{rounded.full}"
@@ -154,7 +149,7 @@ components:
 
 The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Lemon gold is the ticket: it fills the one action that matters, "Plan your visit", and almost nothing else.
 
-Density is low and theatrical. Sections breathe with 80 to 112px of vertical room, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.
+Density is low and theatrical. Sections breathe with 56 to 80px of vertical room on each side, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.
 
 The world rejects the category default of a pastel church brochure with a banner hero and three feature cards. It also rejects the neon excesses of its cinematic reference: no glows, no decorative gradients, no lit edges.
 
@@ -177,13 +172,13 @@ A two-color brand (violet and gold) staged on a violet-black night, with white a
 - **Lilac Text** (`violet-text`): the only sanctioned violet for text or strokes on the dark ground (6.7:1). Currently it appears only as the scrollbar thumb's hover state; any future violet-tinted link or label uses this, not the brand violet.
 
 ### Secondary
-- **Lemon Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the "This Sunday" tile heading, the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 14.8:1.
+- **Lemon Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 14.8:1.
 - **Pale Lemon** (`gold-hover`): the hover fill of the gold pill.
 - **Ink Plum** (`on-gold`): text and icons on gold (13.7:1 on gold, 14.9:1 on pale lemon), and the selection text color.
 
 ### Neutral
 - **Vesper Ground** (`ground`): the page, the header, the footer, form field wells, and the dark scrims laid over photographs (as translucent ground, 60% to 92%).
-- **Raised Night** (`raised`): cards that lift off the ground (the visit form, the mobile "This Sunday" tile), image placeholders, and the hover fill of icon buttons.
+- **Raised Night** (`raised`): cards that lift off the ground (the visit form), image placeholders, and the hover fill of icon buttons.
 - **Hairline Plum** (`line`): every divider and border: header rule when scrolled, event and FAQ row rules, footer rules, field strokes, icon-button strokes, and the 1px ring that stands in for elevation.
 - **White** (`text`): headings and primary text (20.1:1 on ground, 18.7:1 on raised). Translucent white (10% to 60%) forms ghost-button borders and soft pill fills; 80% to 90% white is used only for body copy set directly over photographs.
 - **Dusk Lavender** (`muted`): secondary text, descriptions, metadata, nav links at rest, footer body (9.3:1 on ground, 8.6:1 on raised).
@@ -205,7 +200,7 @@ A two-color brand (violet and gold) staged on a violet-black night, with white a
 **Character:** Poppins is the face on the church's own Sunday banner; set bold, huge and tightly tracked, it gives the page its headliner voice. Geist is quiet and even, so information reads calmly underneath. Sacramento comes from the same banner's script welcome and exists only to carry that line.
 
 ### Hierarchy
-- **Display** (700, `clamp(2.75rem, 7vw, 6rem)`, 0.98, -0.035em): the hero headline only. At desktop it is clamped by `clamp(3.5rem, 5.4vw, 6rem)` so it clears the "This Sunday" tile.
+- **Display** (700, `clamp(2.75rem, 7vw, 6rem)`, 0.98, -0.035em): the hero headline only.
 - **Display Stack** (600, `clamp(2.5rem, 5.4vw, 4.75rem)`, 1.02, -0.035em): the stacked pillar words, one per line.
 - **Headline** (700, `clamp(2rem, 4.2vw, 3.5rem)`, 1.02, -0.03em): section headings. The closing violet band runs larger (`clamp(2.25rem, 5vw, 4.25rem)`, -0.035em).
 - **Headline Rail** (700, `clamp(1.75rem, 3.4vw, 2.75rem)`, 1.05): the heading that sits beside a poster rail's arrows.
@@ -214,7 +209,7 @@ A two-color brand (violet and gold) staged on a violet-black night, with white a
 - **Lead** (400, 1.125rem, 2rem line): hero and band supporting copy, capped at 44ch to 50ch. Section descriptions run at 1.0625rem with the same 2rem line, capped at 56ch.
 - **Body** (400, 1rem, 1.75rem line): event descriptions and FAQ answers, capped at 52ch to 60ch.
 - **Label** (600, 0.875rem): buttons, nav links (500), field labels (500), footer column headings.
-- **Caption** (400, 0.75rem): helper text, the time stamp on the "This Sunday" tile, legal line. The event date tile's month uses 600 with 0.12em tracking in capitals, as a data label.
+- **Caption** (400, 0.75rem): helper text, the legal line. The event date tile's month uses 600 with 0.12em tracking in capitals, as a data label.
 - **Script** (400, `clamp(2.75rem, 7.5vw, 6.5rem)`, 1.08): the Cebuano welcome line in the photo band, one phrase per line; its footer echo sets at 1.875rem in gold.
 
 Headings use balanced wrapping; paragraphs use pretty wrapping. Times, dates and phone numbers use tabular numerals.
@@ -228,15 +223,15 @@ Headings use balanced wrapping; paragraphs use pretty wrapping. Times, dates and
 
 A single centered container of 88rem (1408px) with 16px side gutters, widening to 24px from 640px. The hero and the closing violet band are inset stages: they sit 12px from the viewport edge on phones (16px at 640px, 24px at 1024px), rounded, so the page opens and closes on a framed card rather than a full-bleed slab. The welcome photo band is the one deliberate full-bleed section.
 
-Vertical rhythm: sections take 80px of top and bottom padding, 112px from 640px (the pillars section runs 96px and 128px). A section heading sits 56px above its content; a poster rail sits 40px below its heading. Cards pad 32px, 40px from 640px.
+Vertical rhythm: every content section takes the same 56px of top and bottom padding, 80px from 640px, so the gap between two sections on the ground is 112px on phones and 160px from 640px. Inset panels (verse of the day, closing band) sit on bottom padding only. A section heading sits 56px above its content; a poster rail sits 40px below its heading. Cards pad 32px, 40px from 640px.
 
-The hero is about 78svh on phones (min 34rem, max 56rem) and fills the viewport under the header from 1024px (`100svh - 6rem`, min 40rem). Its copy anchors bottom left; the "This Sunday" tile anchors bottom right as an overlay at 1024px and drops below the hero card as a separate tile on smaller screens.
+The hero is about 78svh on phones (min 34rem, max 56rem) and fills the viewport under the header from 1024px (`100svh - 6rem`, min 40rem). Its copy anchors bottom left and states the service day, time and venue, so the first viewport answers when and where at every width.
 
 Breakpoints are Tailwind's defaults (640, 768, 1024, 1280). Two-column splits (pillars beside a photo, visit facts beside the form) open at 1024px; sermon thumbnails go three-up at 768px. The poster rail shows about 1.4 posters on phones, stepping to about 5 at 1280px, and its padding tracks the container edge so the first poster aligns with the headings above it while later posters bleed off the right.
 
 ## Elevation & Depth
 
-Flat. There are no drop shadows anywhere. Depth comes from three things: tonal steps (ground to raised), a 1px hairline ring in the line color on containers that must separate from the ground (the hero stage, the "This Sunday" tile, the visit form), and photographs with ground-colored scrims. Photo tiles inside rails and grids go without the ring; their image edge is enough. The header gains a hairline bottom rule and an 85% ground backdrop blur once the page scrolls.
+Flat. There are no drop shadows anywhere. Depth comes from three things: tonal steps (ground to raised), a 1px hairline ring in the line color on containers that must separate from the ground (the hero stage, the visit form), and photographs with ground-colored scrims. Photo tiles inside rails and grids go without the ring; their image edge is enough. The header gains a hairline bottom rule and an 85% ground backdrop blur once the page scrolls.
 
 ### Shadow Vocabulary
 - **Hairline Ring** (`box-shadow: 0 0 0 1px var(--line)`): the only box-shadow in the system, used as a border that does not affect layout.
@@ -246,7 +241,7 @@ Flat. There are no drop shadows anywhere. Depth comes from three things: tonal s
 
 ## Shapes
 
-Soft rectangles and full pills, nothing else. Large media and containers (hero stage, pillars photo, visit form, confirmation panel, closing band) use gently rounded 16px corners. Posters, sermon thumbnails, the "This Sunday" tile, event date tiles, form fields and the footer logo use 12px. The header logo mark and the banner crop inside the "This Sunday" tile use 8px. Pills (fully rounded) are reserved for controls: buttons, icon buttons, the skip link, and the sermon play badge. The focus outline rounds to 4px.
+Soft rectangles and full pills, nothing else. Large media and containers (hero stage, pillars photo, visit form, confirmation panel, closing band) use gently rounded 16px corners. Posters, sermon thumbnails, leader portraits, event date tiles, form fields and the footer logo use 12px. The header logo mark uses 8px. Pills (fully rounded) are reserved for controls: buttons, icon buttons, the skip link, and the sermon play badge. The focus outline rounds to 4px.
 
 ## Components
 
@@ -256,7 +251,6 @@ Confident pills with a small forward arrow that opens up on hover.
 - **Primary:** Lemon Gold fill, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow.
 - **Hover / Focus:** fill shifts to Pale Lemon and the arrow gap widens from 8px to 12px over 300ms. Focus shows the global 2px gold outline at 3px offset.
 - **Ghost:** transparent with a 1px white border at 30% (40% on violet), white label. Hover raises the border to 60% (full white on violet) and adds a 10% white wash. Used for "Watch online", "Watch on Facebook", "Get directions", "Message us on Facebook".
-- **Soft:** 10% white fill, 20% on hover, 0.75rem at 600, 8px by 16px. Used only inside the "This Sunday" tile.
 - **Icon:** 44px circle, 1px line border, white icon. Hover takes a raised fill and a 50% white border. Disabled drops to 35% opacity with no hover.
 
 ### Cards / Containers
@@ -284,14 +278,14 @@ Tall 3:4 photograph tiles for ministries, 12px radius, raised placeholder. A gro
 ### Date Tile
 A square 12px-radius violet tile (72px on phones, 88px from 640px) holding the month in Violet Mist capitals above the day in Poppins 700 white. It leads each event row in a list separated by hairline rules.
 
-### This Sunday Tile
-A 12px-radius card with a hairline ring, 12px padding: a gold "This Sunday" heading and the service time in muted, a crop of the church's own Sunday banner at 8px radius, then the venue and a soft "Get directions" pill. On desktop it overlays the hero's bottom right on ground; on smaller screens it sits below the hero on raised.
+### Leader Cards
+"Meet our leaders" follows the standard section heading, with leaders below in a two-column grid from 640px (stacked on phones). Each photo is 4:3 at 12px radius, close to the source photos' own proportions so they are shown near their native resolution rather than enlarged, and cropped to keep the person in frame. The name is set in Poppins 700 below, with an optional muted role line. No role or bio is shown unless the church has confirmed it.
 
 ### Poster Rail (signature)
 A horizontal list with mandatory scroll-snap to each poster's start, 16px gaps, hidden scrollbar and contained horizontal overscroll. Its heading sits left with two icon buttons right (previous, next). Each press scrolls 80% of the rail's width, smoothly unless reduced motion is requested. The buttons disable at each end, measured within 4px of the edge on scroll and resize. The rail's inline padding and scroll padding match the container edge at every width.
 
 ### Motion
-One orchestrated hero entrance: the hero stage unveils from a slightly inset, rounded clip with a 1.06 scale over 1.4s, while the headline, lead, actions and "This Sunday" tile rise 28px from blur and transparency over 1.1s, staggered at 0, 120, 240 and 360ms. Both use `cubic-bezier(0.16, 1, 0.3, 1)`. Under reduced motion the animations are not defined at all and smooth scrolling turns off. Elsewhere, motion is limited to hover state transitions (300ms colors and gaps, 700ms image zoom).
+One orchestrated hero entrance: the hero stage unveils from a slightly inset, rounded clip with a 1.06 scale over 1.4s, while the headline, lead and actions rise 28px from blur and transparency over 1.1s, staggered at 0, 120 and 240ms. Both use `cubic-bezier(0.16, 1, 0.3, 1)`. Under reduced motion the animations are not defined at all and smooth scrolling turns off. Elsewhere, motion is limited to hover state transitions (300ms colors and gaps, 700ms image zoom).
 
 ## Do's and Don'ts
 

@@ -4,7 +4,7 @@ import { siteConfig } from "@/data/site";
 
 export default function Pillars() {
   return (
-    <section id="about" aria-labelledby="pillars-title" className="scroll-mt-24 py-24 sm:py-32">
+    <section id="about" aria-labelledby="pillars-title" className="scroll-mt-24 py-14 sm:py-20">
       <div className="mx-auto grid max-w-[88rem] items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
         <div>
           <h2 id="pillars-title" className="max-w-[26ch] text-lg leading-8 text-muted">
