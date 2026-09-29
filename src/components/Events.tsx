@@ -26,14 +26,14 @@ export default function Events({
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         {standalone ? (
           <p className="text-sm text-muted">
-            Dates shown are samples until the church confirms its calendar.
+            These dates are examples for now. Check our Facebook page for the latest.
           </p>
         ) : (
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               id="events-title"
               title="Coming up"
-              description="Guests are welcome at every one of these. Dates shown are samples until the church confirms its calendar."
+              description="Everyone’s welcome, first-timers included. These dates are examples for now."
             />
             <Link
               href="/events"

@@ -14,7 +14,7 @@ export default function CtaBand({ showWatch = true }: { showWatch?: boolean }) {
             id="cta-title"
             className="font-display text-[clamp(2.25rem,5vw,4.25rem)] font-bold leading-[1.02] tracking-[-0.035em] text-text"
           >
-            This Sunday, there is a seat saved for you.
+            This Sunday, there’s a seat saved for you.
           </h2>
           <p className="mt-5 max-w-[50ch] text-lg leading-8 text-on-violet-muted">
             <span className="numeric">{siteConfig.service.time}</span> at{" "}

@@ -103,7 +103,7 @@ export default function Footer() {
           <p className="numeric">
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <p>Ministry, sermon and event details are placeholders until confirmed.</p>
+          <p>Some ministries, messages and events on this site are examples for now.</p>
         </div>
       </div>
     </footer>

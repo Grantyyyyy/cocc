@@ -118,7 +118,7 @@ export const events = [
     title: "City Serve Day",
     date: "2026-10-24",
     time: "8AM",
-    location: "Barangay outreach site",
+    location: "Barangay to be announced",
     description: "Families, youth and adults serving side by side across the city.",
   },
 ];
@@ -127,7 +127,7 @@ export const visitFaqs = [
   {
     question: "Where is it?",
     answer:
-      "Plaza Alemania, 2nd Floor, in Iligan City. Tap Get directions for a map. Our hosts will be at the entrance to help you find a seat.",
+      "Plaza Alemania, 2nd Floor, in Iligan City. Our hosts wait at the entrance and will help you find a seat.",
   },
   {
     question: "How long is the service?",
@@ -135,10 +135,10 @@ export const visitFaqs = [
   },
   {
     question: "What should I wear?",
-    answer: "Whatever you are comfortable in. Come as you are.",
+    answer: "Whatever you’re comfortable in. Come as you are.",
   },
   {
     question: "Can I bring my kids?",
-    answer: "Yes. Families are welcome. Ask a host on the day about programs for children.",
+    answer: "Yes, families are welcome. Ask a host on Sunday about what we have for kids.",
   },
 ];

@@ -8,10 +8,10 @@ export default function NotFound() {
       <div className="mx-auto max-w-[88rem]">
         <p className="font-display text-sm font-semibold text-gold">404</p>
         <h1 className="mt-4 max-w-3xl font-display text-[clamp(2.5rem,6vw,5rem)] font-bold leading-none tracking-[-0.035em] text-text">
-          We could not find that page.
+          We couldn’t find that page.
         </h1>
         <p className="mt-6 max-w-[48ch] text-lg leading-8 text-muted">
-          The link may be old or mistyped. You are still welcome here, so try one of these instead.
+          The link may be old or mistyped. You’re still welcome here, so try one of these instead.
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <Link

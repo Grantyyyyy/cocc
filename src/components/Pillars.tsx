@@ -10,7 +10,7 @@ export default function Pillars({ linkToAbout = false }: { linkToAbout?: boolean
       <div className="mx-auto grid max-w-[88rem] items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
         <div>
           <h2 id="pillars-title" className="max-w-[26ch] text-lg leading-8 text-muted">
-            {siteConfig.tagline} Everything we do rests on six things.
+            {siteConfig.tagline} Everything we do comes back to these.
           </h2>
           <ul className="mt-10 space-y-1">
             {pillars.map((pillar) => (

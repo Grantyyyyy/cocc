@@ -18,7 +18,7 @@ export default function VisitPage() {
       <FaqStructuredData faqs={visitFaqs} />
       <PageHeader
         title="Plan your visit"
-        description="Everything you need for your first Sunday. If you would rather just show up, that is completely fine too."
+        description="Everything you need for your first Sunday. If you’d rather just show up, that’s fine too."
         image={worship}
         imageAlt="The COCC worship team leading the congregation, hands raised, during a Sunday service"
         focus="object-[40%_30%]"

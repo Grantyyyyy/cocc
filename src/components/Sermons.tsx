@@ -26,15 +26,15 @@ export default function Sermons({
       <div className="mx-auto max-w-[88rem] px-4 sm:px-6">
         {standalone ? (
           <p className="text-sm text-muted">
-            Sample titles until real messages are linked. Every message opens on
-            our Facebook page.
+            These titles are examples for now. Each one opens our Facebook page,
+            where every message is posted.
           </p>
         ) : (
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               id="watch-title"
               title="Missed a Sunday?"
-              description="Messages go up on our Facebook page after every service. The titles below are samples until real messages are linked."
+              description="Messages go up on our Facebook page after every service. The ones below are examples for now."
             />
             <Link
               href="/watch"

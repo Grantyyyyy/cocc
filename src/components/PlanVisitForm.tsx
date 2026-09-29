@@ -36,7 +36,7 @@ export default function PlanVisitForm() {
           onClick={() => setStatus("idle")}
           className="mt-8 text-sm font-semibold text-text underline decoration-text/40 hover:decoration-text"
         >
-          Send another response
+          Save a seat for someone else
         </button>
       </div>
     );
@@ -54,7 +54,7 @@ export default function PlanVisitForm() {
       className="rounded-2xl bg-raised p-8 ring-1 ring-line sm:p-10"
     >
       <h3 className="font-display text-2xl font-bold tracking-[-0.03em] text-text">
-        Tell us you are coming
+        Let us know you’re coming
       </h3>
       <p className="mt-3 max-w-[46ch] leading-7 text-muted">
         A host will meet you at the entrance and save you a seat.
@@ -111,7 +111,7 @@ export default function PlanVisitForm() {
         {!pending && <Icon name="arrow-right" className="h-4 w-4" />}
       </button>
       <p className="mt-4 text-xs leading-5 text-muted">
-        Demo form. Responses are not stored or sent anywhere yet.
+        This form isn’t connected yet, so nothing you type here is sent. For now, message us on Facebook.
       </p>
     </form>
   );

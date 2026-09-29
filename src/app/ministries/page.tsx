@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
   title: "Ministries",
-  description: `Kids, youth, life groups, worship, outreach and prayer at ${siteConfig.name} in ${siteConfig.venue.city}. There is a place here for your whole family.`,
+  description: `Kids, youth, life groups, worship, outreach and prayer at ${siteConfig.name} in ${siteConfig.venue.city}. There’s a place here for your whole family.`,
   path: "/ministries",
 });
 
@@ -15,7 +15,7 @@ export default function MinistriesPage() {
     <>
       <PageHeader
         title="Ministries"
-        description="From the littlest ones to the prayer team, there is a place here for your whole family."
+        description="From the littlest ones to the prayer team, there’s a place here for your whole family."
         image="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=2000&q=70"
         imageAlt="Friends with their arms around each other at sunset"
       />
