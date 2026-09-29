@@ -9,14 +9,16 @@ export default function WelcomeBand() {
       aria-labelledby="welcome-title"
       className="relative isolate flex min-h-[34rem] items-center justify-center overflow-hidden px-4 py-24 text-center sm:min-h-[40rem]"
     >
-      <Image
-        src={baptism}
-        alt="A line of people in white shirts holding hands in the sea during a COCC baptism"
-        fill
-        placeholder="blur"
-        sizes="100vw"
-        className="-z-10 object-cover"
-      />
+      <div className="parallax absolute inset-x-0 -inset-y-[12%] -z-10" aria-hidden="true">
+        <Image
+          src={baptism}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
       <div className="absolute inset-0 -z-10 bg-ground/60" aria-hidden="true" />
 
       <div className="max-w-4xl">

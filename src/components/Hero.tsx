@@ -8,16 +8,18 @@ export default function Hero() {
   return (
     <section className="px-3 pt-2 sm:px-4 lg:px-6">
       <div className="relative mx-auto max-w-[88rem]">
-        <div className="unveil relative isolate flex h-[78svh] min-h-[34rem] max-h-[56rem] overflow-hidden rounded-2xl bg-violet-deep lg:h-[calc(100svh-6rem)] lg:min-h-[40rem]">
-          <Image
-            src={worship}
-            alt="The COCC worship team leading the congregation, hands raised, during a Sunday service"
-            fill
-            preload
-            placeholder="blur"
-            sizes="(min-width: 1408px) 88rem, 100vw"
-            className="-z-10 object-cover object-[40%_30%]"
-          />
+        <div className="unveil relative isolate flex h-[78svh] min-h-[34rem] max-h-[56rem] overflow-hidden rounded-2xl bg-violet-deep ring-1 ring-line lg:h-[calc(100svh-6rem)] lg:min-h-[40rem]">
+          <div className="parallax-hero absolute inset-x-0 -inset-y-[12%] -z-10">
+            <Image
+              src={worship}
+              alt="The COCC worship team leading the congregation, hands raised, during a Sunday service"
+              fill
+              preload
+              placeholder="blur"
+              sizes="(min-width: 1408px) 88rem, 100vw"
+              className="object-cover object-[40%_30%]"
+            />
+          </div>
           <div
             className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgba(11,5,20,0.82)_0%,rgba(11,5,20,0.66)_38%,rgba(11,5,20,0.1)_75%),linear-gradient(to_right,rgba(11,5,20,0.65),transparent_60%)]"
             aria-hidden="true"
