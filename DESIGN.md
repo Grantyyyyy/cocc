@@ -250,8 +250,8 @@ Soft rectangles and full pills, nothing else. Large media and containers (hero s
 ### Buttons
 Confident pills with a small forward arrow that opens up on hover.
 - **Shape:** full pill (9999px).
-- **Primary:** Antique Gold fill, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow.
-- **Hover / Focus:** fill shifts to Champagne Gold and the arrow gap widens from 8px to 12px over 300ms. Focus shows the global 2px gold outline at 3px offset.
+- **Primary:** Metallic gold fill using `--gold-metal`, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow. The angled gold highlight is reserved for filled action links and buttons; icons, text, and wayfinding keep the flat Antique Gold token.
+- **Hover / Focus:** the metallic highlight shifts across the button over 650ms and the arrow gap widens from 8px to 12px over 300ms. Reduced motion disables the highlight movement. Focus shows the global 2px gold outline at 3px offset.
 - **Ghost:** transparent with a 1px white border at 30% (40% on violet), white label. Hover raises the border to 60% (full white on violet) and adds a 10% white wash. Used for "Watch online", "Watch on Facebook", "Get directions", "Message us on Facebook".
 - **Icon:** 44px circle, 1px line border, white icon. Hover takes a raised fill and a 50% white border. Disabled drops to 35% opacity with no hover.
 
@@ -308,7 +308,7 @@ One orchestrated hero entrance: the hero stage unveils from a slightly inset, ro
 ### Don't:
 - **Don't** set the brand violet as text or thin strokes on the dark ground (2.9:1).
 - **Don't** use gold as a panel fill, heading color, or second button with a different job.
-- **Don't** add drop shadows, glows, neon edges, or colored decorative gradients.
+- **Don't** add drop shadows, glows, neon edges, or colored decorative gradients. The user-requested metallic gold action fill is the sole gradient exception.
 - **Don't** use Sacramento for anything but the Cebuano welcome line and its footer echo.
 - **Don't** add load motion beyond the hero entrance.
 - **Don't** use pills for containers or square corners for controls.

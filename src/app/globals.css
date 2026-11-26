@@ -9,6 +9,16 @@
   --violet-text: #b37cf0;
   --gold: #c9a45c;
   --gold-hover: #ddbe83;
+  --gold-metal: linear-gradient(
+    110deg,
+    #bc913f 0%,
+    #d6b467 18%,
+    #f7e4a5 34%,
+    #fff0bc 42%,
+    #c9a04b 54%,
+    #e5c578 74%,
+    #bc913f 100%
+  );
   --on-gold: #1a0b2e;
   --text: #ffffff;
   --muted: #b9aacd;
@@ -77,6 +87,27 @@ time,
 
 .on-gold :focus-visible {
   outline-color: var(--ground);
+}
+
+/* A reflected highlight for gold actions; small icons retain their flat color. */
+:is(a, button).bg-gold {
+  background-image: var(--gold-metal);
+  background-size: 180% 100%;
+  background-position: 35% 50%;
+  transition-property: background-position, background-color, gap, opacity;
+  transition-duration: 650ms, 300ms, 300ms, 300ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:is(a, button).bg-gold:is(:hover, :focus-visible):not(:disabled) {
+  background-position: 100% 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(a, button).bg-gold {
+    transition-property: background-color, opacity;
+    transition-duration: 0ms;
+  }
 }
 
 ::-webkit-scrollbar {
