@@ -2,6 +2,8 @@ import Link from "next/link";
 import Icon from "@/components/Icon";
 import SectionHeading from "@/components/SectionHeading";
 import { events } from "@/data/content";
+import { siteConfig } from "@/data/site";
+import { manilaToday } from "@/lib/service";
 
 const parts = (value: string) => {
   const date = new Date(`${value}T12:00:00`);
@@ -17,6 +19,9 @@ export default function Events({
 }: {
   standalone?: boolean;
 }) {
+  const today = manilaToday();
+  const upcoming = events.filter((event) => event.date >= today);
+
   return (
     <section
       aria-labelledby={standalone ? undefined : "events-title"}
@@ -45,8 +50,32 @@ export default function Events({
           </div>
         )}
 
+        {upcoming.length === 0 ? (
+          <div
+            className={`${standalone ? "mt-8" : "mt-14"} flex flex-col items-start gap-6 rounded-2xl bg-raised p-8 ring-1 ring-line sm:flex-row sm:items-center sm:justify-between sm:p-10`}
+          >
+            <div>
+              <p className="font-display text-xl font-semibold tracking-[-0.02em] text-text sm:text-2xl">
+                Nothing on the calendar just yet
+              </p>
+              <p className="mt-2 max-w-[52ch] leading-7 text-muted">
+                New events are announced on our Facebook page first. Sunday Service is
+                still on every week, {siteConfig.service.time}.
+              </p>
+            </div>
+            <a
+              href={siteConfig.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-text/30 px-6 py-3 text-sm font-semibold text-text transition-[border-color,gap] duration-300 hover:gap-3 hover:border-text/60"
+            >
+              Follow on Facebook
+              <Icon name="arrow-right" className="h-4 w-4" />
+            </a>
+          </div>
+        ) : (
         <ul className={`${standalone ? "mt-8" : "mt-14"} border-t border-line`}>
-          {events.map((event) => {
+          {upcoming.map((event) => {
             const { month, day, weekday } = parts(event.date);
             return (
               <li
@@ -79,6 +108,7 @@ export default function Events({
             );
           })}
         </ul>
+        )}
       </div>
     </section>
   );

@@ -31,44 +31,38 @@ export const ministries = [
   {
     name: "Kids",
     line: "The big story of the Bible, at their level",
-    image:
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "A laughing child with paint on her face",
+    image: "/img/kids-ministry.png",
+    imageAlt: "A young child seated on a chair, clapping her hands",
   },
   {
     name: "Youth",
     line: "Friendship and faith for high schoolers",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "A row of young people sitting arm in arm by the sea",
+    image: "/img/youth-ministry.png",
+    imageAlt: "A group of young people in white shirts standing together in the sea",
   },
   {
     name: "Life Groups",
     line: "Small groups meeting across the city",
-    image:
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "Friends with their arms around each other at sunset",
+    image: "/img/life-groups-ministry.png",
+    imageAlt: "Church members gathered for a group photo in a decorated hall",
   },
   {
     name: "Worship",
     line: "Musicians, singers and the tech team",
-    image:
-      "https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "A crowd worshipping with hands raised under stage lights",
+    image: "/img/worship-ministry.png",
+    imageAlt: "The congregation raising their hands as the worship team leads from the stage, framed by red curtains",
   },
   {
     name: "Outreach",
     line: "Serving barangays across Iligan",
-    image:
-      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "A volunteer in a bright shirt at a community event",
+    image: "/img/volunteer-ministry.png",
+    imageAlt: "Volunteers gathered around a table with water containers, one holding a tablet",
   },
   {
     name: "Prayer",
     line: "Standing with you in every season",
-    image:
-      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=70",
-    imageAlt: "Many hands joined together in a circle",
+    image: "/img/prayer-ministry.png",
+    imageAlt: "The congregation praying together with eyes closed and hands raised",
   },
 ];
 
@@ -123,6 +117,29 @@ export const events = [
   },
 ];
 
+export const visitSteps = [
+  {
+    time: "Before 9AM",
+    title: "Arrive",
+    body: "Head up to Plaza Alemania, 2nd Floor. A host at the entrance will say hello and help you find a seat.",
+  },
+  {
+    time: "9AM",
+    title: "Worship",
+    body: "We open with songs in English and Cebuano. Sing along, or just listen. Either is fine.",
+  },
+  {
+    time: "Then",
+    title: "The message",
+    body: "A message from the Bible that connects to everyday life in Iligan.",
+  },
+  {
+    time: "11AM",
+    title: "Prayer and kumustahan",
+    body: "We close in prayer, then hang around to talk. Stay as long as you like, or slip out. No pressure.",
+  },
+];
+
 export const visitFaqs = [
   {
     question: "Where is it?",
@@ -140,5 +157,14 @@ export const visitFaqs = [
   {
     question: "Can I bring my kids?",
     answer: "Yes, families are welcome. Ask a host on Sunday about what we have for kids.",
+  },
+  {
+    question: "Is it in English or Cebuano?",
+    answer: "Both. We welcome people in Cebuano and English, so you will feel at home either way.",
+  },
+  {
+    question: "Do I need to sign up first?",
+    answer:
+      "No. The form on this page just helps us get ready for you. You are always welcome to simply show up.",
   },
 ];

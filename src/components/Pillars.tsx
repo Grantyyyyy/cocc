@@ -35,8 +35,8 @@ export default function Pillars({ linkToAbout = false }: { linkToAbout?: boolean
 
         <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-raised">
           <Image
-            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1200&q=75"
-            alt="Friends laughing together around a table"
+            src="/img/church-pillars.png"
+            alt="A man worshipping with his arms raised among the congregation under violet lighting"
             fill
             sizes="(min-width: 1024px) 44vw, 92vw"
             className="object-cover"

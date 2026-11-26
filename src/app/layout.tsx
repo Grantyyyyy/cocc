@@ -3,6 +3,7 @@ import { Geist, Poppins, Sacramento } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileActionBar from "@/components/MobileActionBar";
 import SideRaysBackground from "@/components/SideRaysBackground";
 import StructuredData from "@/components/StructuredData";
 import { siteConfig } from "@/data/site";
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <MobileActionBar />
       </body>
     </html>
   );

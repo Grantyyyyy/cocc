@@ -30,7 +30,7 @@ function Poster({ ministry, sizes, className }: { ministry: Ministry; sizes: str
   );
 }
 
-const sampleNote = "These ministries and photos are examples for now. Our full list is coming soon.";
+const sampleNote = "Some ministry details and photos are examples for now. Our full list is coming soon.";
 
 export default function Ministries({ variant = "rail" }: { variant?: "rail" | "grid" }) {
   if (variant === "grid") {

@@ -10,6 +10,9 @@ export const metadata = pageMetadata({
   path: "/events",
 });
 
+// Re-render hourly so past events drop off on their own.
+export const revalidate = 3600;
+
 export default function EventsPage() {
   return (
     <>
