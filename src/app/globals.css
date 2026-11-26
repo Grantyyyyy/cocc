@@ -133,6 +133,23 @@ time,
   scrollbar-width: none;
 }
 
+/* Let the existing hero entrance begin after the opening mark is drawn. */
+.cocc-cinematic-intro {
+  animation: intro-fail-open 1ms 8s forwards;
+}
+
+@keyframes intro-fail-open {
+  to { visibility: hidden; pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cocc-cinematic-intro { display: none !important; }
+}
+
+html[data-cocc-intro="playing"] :is(.rise, .unveil) {
+  animation-play-state: paused;
+}
+
 .rail::-webkit-scrollbar {
   display: none;
 }

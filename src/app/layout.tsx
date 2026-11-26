@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Poppins, Sacramento } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import CinematicIntro from "@/components/CinematicIntro";
 import Footer from "@/components/Footer";
 import MobileActionBar from "@/components/MobileActionBar";
 import SideRaysBackground from "@/components/SideRaysBackground";
@@ -92,18 +93,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-ground text-text">
         <SideRaysBackground />
         <StructuredData />
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-gold"
-        >
-          Skip to content
-        </a>
-        <Header />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <Footer />
-        <MobileActionBar />
+        <CinematicIntro />
+        <div id="site-shell" className="flex min-h-full flex-1 flex-col">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-gold focus:px-5 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-gold"
+          >
+            Skip to content
+          </a>
+          <Header />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <Footer />
+          <MobileActionBar />
+        </div>
       </body>
     </html>
   );
