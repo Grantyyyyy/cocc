@@ -8,8 +8,8 @@ colors:
   violet: "#8214d9"
   violet-deep: "#6a0fb3"
   violet-text: "#b37cf0"
-  gold: "#fcdc58"
-  gold-hover: "#ffe680"
+  gold: "#c9a45c"
+  gold-hover: "#ddbe83"
   on-gold: "#1a0b2e"
   text: "#ffffff"
   muted: "#b9aacd"
@@ -147,7 +147,7 @@ components:
 
 **Creative North Star: "The Sunday Headliner"**
 
-The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Lemon gold is the ticket: it fills the one action that matters, "Plan your visit", and almost nothing else.
+The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Antique gold is the ticket: it fills the one action that matters, "Plan your visit", and almost nothing else.
 
 Density is low and theatrical. Sections breathe with 56 to 80px of vertical room on each side, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.
 
@@ -172,9 +172,9 @@ A two-color brand (violet and gold) staged on a violet-black night, with white a
 - **Lilac Text** (`violet-text`): the only sanctioned violet for text or strokes on the dark ground (6.7:1). Currently it appears only as the scrollbar thumb's hover state; any future violet-tinted link or label uses this, not the brand violet.
 
 ### Secondary
-- **Lemon Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 14.8:1.
-- **Pale Lemon** (`gold-hover`): the hover fill of the gold pill.
-- **Ink Plum** (`on-gold`): text and icons on gold (13.7:1 on gold, 14.9:1 on pale lemon), and the selection text color.
+- **Antique Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 8.6:1.
+- **Champagne Gold** (`gold-hover`): the hover fill of the gold pill.
+- **Ink Plum** (`on-gold`): text and icons on gold (7.9:1 on gold, 10.4:1 on champagne gold), and the selection text color.
 
 ### Neutral
 - **Vesper Ground** (`ground`): the page, the header, the footer, form field wells, and the dark scrims laid over photographs (as translucent ground, 60% to 92%).
@@ -250,8 +250,8 @@ Soft rectangles and full pills, nothing else. Large media and containers (hero s
 ### Buttons
 Confident pills with a small forward arrow that opens up on hover.
 - **Shape:** full pill (9999px).
-- **Primary:** Lemon Gold fill, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow.
-- **Hover / Focus:** fill shifts to Pale Lemon and the arrow gap widens from 8px to 12px over 300ms. Focus shows the global 2px gold outline at 3px offset.
+- **Primary:** Antique Gold fill, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow.
+- **Hover / Focus:** fill shifts to Champagne Gold and the arrow gap widens from 8px to 12px over 300ms. Focus shows the global 2px gold outline at 3px offset.
 - **Ghost:** transparent with a 1px white border at 30% (40% on violet), white label. Hover raises the border to 60% (full white on violet) and adds a 10% white wash. Used for "Watch online", "Watch on Facebook", "Get directions", "Message us on Facebook".
 - **Icon:** 44px circle, 1px line border, white icon. Hover takes a raised fill and a 50% white border. Disabled drops to 35% opacity with no hover.
 

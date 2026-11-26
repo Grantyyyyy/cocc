@@ -81,7 +81,7 @@ export default function Ministries({ variant = "rail" }: { variant?: "rail" | "g
               link: "/ministries",
             }))}
             defaultIndex={0}
-            accentColor="#fcdc58"
+            accentColor="var(--gold)"
             overlayColor="#0b0514"
             height={520}
             gap={12}

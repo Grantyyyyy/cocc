@@ -96,32 +96,32 @@
       },
       "gold": {
         "role": "secondary",
-        "displayName": "Lemon Gold",
-        "canonical": "oklch(89.8% 0.152 95.5)",
+        "displayName": "Antique Gold",
+        "canonical": "#c9a45c",
         "tonalRamp": [
-          "#0f0b00",
-          "#2d2401",
-          "#4f4100",
-          "#736005",
-          "#998105",
-          "#c1a304",
-          "#e7c840",
-          "#ffefb0"
+          "#171008",
+          "#362817",
+          "#574228",
+          "#795f3b",
+          "#a08049",
+          "#c9a45c",
+          "#ddbe83",
+          "#f0e3ca"
         ]
       },
       "gold-hover": {
         "role": "secondary",
-        "displayName": "Pale Lemon",
-        "canonical": "oklch(92.5% 0.125 95.9)",
+        "displayName": "Champagne Gold",
+        "canonical": "#ddbe83",
         "tonalRamp": [
-          "#0f0b00",
-          "#2d2501",
-          "#4e4101",
-          "#736000",
-          "#998106",
-          "#bda43b",
-          "#e1c963",
-          "#ffefaf"
+          "#171008",
+          "#362817",
+          "#574228",
+          "#795f3b",
+          "#a08049",
+          "#c9a45c",
+          "#ddbe83",
+          "#f0e3ca"
         ]
       },
       "on-gold": {
@@ -382,7 +382,7 @@
   ],
   "narrative": {
     "northStar": "The Sunday Headliner",
-    "overview": "The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Lemon gold is the ticket: it fills the one action that matters, \"Plan your visit\", and almost nothing else.\n\nDensity is low and theatrical. Sections breathe with 80 to 112px of vertical room, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.\n\nThe world rejects the category default of a pastel church brochure with a banner hero and three feature cards. It also rejects the neon excesses of its cinematic reference: no glows, no decorative gradients, no lit edges.",
+    "overview": "The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Antique gold is the ticket: it fills the one action that matters, \"Plan your visit\", and almost nothing else.\n\nDensity is low and theatrical. Sections breathe with 80 to 112px of vertical room, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.\n\nThe world rejects the category default of a pastel church brochure with a banner hero and three feature cards. It also rejects the neon excesses of its cinematic reference: no glows, no decorative gradients, no lit edges.",
     "keyCharacteristics": [
       "Dark violet-black ground with white type; every token text pairing measures at least 5.6:1.",
       "Brand violet as a field color only; gold as the single action color.",
