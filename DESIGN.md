@@ -8,8 +8,8 @@ colors:
   violet: "#8214d9"
   violet-deep: "#6a0fb3"
   violet-text: "#b37cf0"
-  gold: "#fcdc58"
-  gold-hover: "#ffe680"
+  gold: "#c9a45c"
+  gold-hover: "#ddbe83"
   on-gold: "#1a0b2e"
   text: "#ffffff"
   muted: "#b9aacd"
@@ -147,9 +147,9 @@ components:
 
 **Creative North Star: "The Sunday Headliner"**
 
-The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Lemon gold is the ticket: it fills the one action that matters, "Plan your visit", and almost nothing else.
+The page bills Sunday Service the way a tour site bills its headline date: a near-black violet ground, photographs of the church's own people as the only light source, and heavy geometric type set huge and tight across them. The brand violet does not tint text or decorate edges; it takes over whole fields (the closing call band, date tiles, the confirmation panel). Antique gold is the ticket: it fills the one action that matters, "Plan your visit", and almost nothing else.
 
-Density is low and theatrical. Sections breathe with 56 to 80px of vertical room on each side, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The only choreographed motion is the hero's entrance; after that, the page holds still and lets the photographs carry it.
+Density is low and theatrical. Sections breathe with 56 to 80px of vertical room on each side, media sits in softly rounded cards inset from the viewport edge, and the one signature interaction is a poster rail that scrolls sideways with snap points and arrow controls. The requested logo intro, hero entrance, and section-specific scroll scores provide motion while the ministry accordion retains its established interaction.
 
 The world rejects the category default of a pastel church brochure with a banner hero and three feature cards. It also rejects the neon excesses of its cinematic reference: no glows, no decorative gradients, no lit edges.
 
@@ -172,9 +172,9 @@ A two-color brand (violet and gold) staged on a violet-black night, with white a
 - **Lilac Text** (`violet-text`): the only sanctioned violet for text or strokes on the dark ground (6.7:1). Currently it appears only as the scrollbar thumb's hover state; any future violet-tinted link or label uses this, not the brand violet.
 
 ### Secondary
-- **Lemon Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 14.8:1.
-- **Pale Lemon** (`gold-hover`): the hover fill of the gold pill.
-- **Ink Plum** (`on-gold`): text and icons on gold (13.7:1 on gold, 14.9:1 on pale lemon), and the selection text color.
+- **Antique Gold** (`gold`): the action color. Filled, it belongs to the primary pill ("Plan your visit", and the form's "Save me a seat" submit). As a stroke or small text it marks wayfinding only: the contact icons (clock, pin, phone, mail), the footer's script echo of the welcome line, and hover and focus states (focus ring, selection, caret, link underline on hover, the sermon play badge on hover). Gold on ground measures 8.6:1.
+- **Champagne Gold** (`gold-hover`): the hover fill of the gold pill.
+- **Ink Plum** (`on-gold`): text and icons on gold (7.9:1 on gold, 10.4:1 on champagne gold), and the selection text color.
 
 ### Neutral
 - **Vesper Ground** (`ground`): the page, the header, the footer, form field wells, and the dark scrims laid over photographs (as translucent ground, 60% to 92%).
@@ -250,8 +250,8 @@ Soft rectangles and full pills, nothing else. Large media and containers (hero s
 ### Buttons
 Confident pills with a small forward arrow that opens up on hover.
 - **Shape:** full pill (9999px).
-- **Primary:** Lemon Gold fill, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow.
-- **Hover / Focus:** fill shifts to Pale Lemon and the arrow gap widens from 8px to 12px over 300ms. Focus shows the global 2px gold outline at 3px offset.
+- **Primary:** Metallic gold fill using `--gold-metal`, Ink Plum label, 0.875rem at 600, 14px by 28px padding, trailing arrow icon at 16px. The header's compact version pads 10px by 20px without the arrow. The angled gold highlight is reserved for filled action links and buttons; icons, text, and wayfinding keep the flat Antique Gold token.
+- **Hover / Focus:** the metallic highlight shifts across the button over 650ms and the arrow gap widens from 8px to 12px over 300ms. Reduced motion disables the highlight movement. Focus shows the global 2px gold outline at 3px offset.
 - **Ghost:** transparent with a 1px white border at 30% (40% on violet), white label. Hover raises the border to 60% (full white on violet) and adds a 10% white wash. Used for "Watch online", "Watch on Facebook", "Get directions", "Message us on Facebook".
 - **Icon:** 44px circle, 1px line border, white icon. Hover takes a raised fill and a 50% white border. Disabled drops to 35% opacity with no hover.
 
@@ -290,7 +290,14 @@ Inner pages (/about, /ministries, /watch, /events, /visit) open with a shorter v
 A horizontal list with mandatory scroll-snap to each poster's start, 16px gaps, hidden scrollbar and contained horizontal overscroll. Its heading sits left with two icon buttons right (previous, next). Each press scrolls 80% of the rail's width, smoothly unless reduced motion is requested. The buttons disable at each end, measured within 4px of the edge on scroll and resize. The rail's inline padding and scroll padding match the container edge at every width.
 
 ### Motion
-One orchestrated hero entrance: the hero stage unveils from a slightly inset, rounded clip with a 1.06 scale over 1.4s, while the headline, lead and actions rise 28px from blur and transparency over 1.1s, staggered at 0, 120 and 240ms. Both use `cubic-bezier(0.16, 1, 0.3, 1)`. Under reduced motion the animations are not defined at all and smooth scrolling turns off. Elsewhere, motion is limited to hover state transitions (300ms colors and gaps, 700ms image zoom).
+
+The homepage opens with a roughly six-second cinematic intro in `CinematicIntro.tsx`. The server renders the dark curtains immediately, so the hero cannot flash first. The original solid metallic gold centerline tracing writes the four COCC fish letters strictly one after another using measured SVG path lengths and native dash attributes driven continuously by GSAP, followed by the church name and tagline before the curtains open. It plays on every homepage visit; other routes, direct hash links, and reduced motion bypass it. Skip and Escape dismiss immediately. The site shell is inert while the dialog owns focus, with a Tab loop and focus restoration. A seven-second JavaScript fallback releases the page after stalled animation setup; an eight-second CSS fallback and noscript stylesheet keep content reachable without hydration or JavaScript. Hero entrances pause while the interactive intro runs.
+
+The pillars have one shared scroll sequence in `PillarsMotion.tsx`: six stationary words receive white ink from left to right as a thin gold frame draws around the worship photograph. This is an original adaptation of the scroll-scrubbed word emphasis identified in Jitter's public `ScrollAppearText` module, not a copied animation asset. At desktop widths of at least 1024px and heights of at least 850px, and only when the measured scene fits with 140px of viewport room reserved, the composition pins 108px below the viewport top for 1.1 viewport heights, with 0.4s scroll smoothing. Smaller screens use normal scrolling across the word list. The sequence reverses with scrolling; it never autoplays or loops. Reduced motion and missing JavaScript keep the complete text readable in white. GSAP matchMedia reverts pinning and styling on navigation or preference changes.
+
+The user requested motion throughout the content. `ContentMotion.tsx` supplies separate scroll scores: sermon panels settle into alignment; the uncropped book cover turns toward the reader; the events divider draws horizontally and real date tiles unfold; scripture lines unfold upward through masks at full white contrast, keeping the original centered typography; the violet invitation field expands behind stationary text; leaders' portraits turn inward; the Visit guide draws down the existing ordered steps. Mobile reduces rotation, and reduced motion disables these nonessential scores. All content remains visible before JavaScript and no animation loops or hides controls. GSAP matchMedia scopes and reverts every score on route or preference changes.
+
+Supporting states retain 300ms color/gap transitions and 700ms image zoom. Text motion should be authored as a specific composition rather than repeated fade-and-rise effects across sections. The ministry accordion stays intact.
 
 ## Do's and Don'ts
 
@@ -308,8 +315,8 @@ One orchestrated hero entrance: the hero stage unveils from a slightly inset, ro
 ### Don't:
 - **Don't** set the brand violet as text or thin strokes on the dark ground (2.9:1).
 - **Don't** use gold as a panel fill, heading color, or second button with a different job.
-- **Don't** add drop shadows, glows, neon edges, or colored decorative gradients.
+- **Don't** add drop shadows, glows, neon edges, or colored decorative gradients. The user-requested metallic gold action fills and logo tracing are the gradient exceptions.
 - **Don't** use Sacramento for anything but the Cebuano welcome line and its footer echo.
-- **Don't** add load motion beyond the hero entrance.
+- **Don't** add load motion beyond the hero entrance and the requested homepage logo intro.
 - **Don't** use pills for containers or square corners for controls.
 - **Don't** put em dashes in copy.

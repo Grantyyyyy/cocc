@@ -32,7 +32,7 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.02, letterSpacing: -2 }}>
             {siteConfig.tagline}
           </div>
-          <div style={{ display: "flex", fontSize: 30, color: "#fcdc58" }}>
+          <div style={{ display: "flex", fontSize: 30, color: "#c9a45c" }}>
             {`Sundays ${siteConfig.service.time}, ${siteConfig.venue.name}`}
           </div>
         </div>

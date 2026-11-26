@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-line bg-ground text-muted">
-      <div className="mx-auto max-w-[88rem] px-4 py-16 sm:px-6 lg:py-20">
+      <div className="mx-auto max-w-[88rem] px-4 pb-32 pt-16 sm:px-6 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1.3fr)]">
           <div>
             <Link href="/" className="inline-flex items-center gap-4">

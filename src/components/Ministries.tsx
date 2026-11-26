@@ -30,7 +30,7 @@ function Poster({ ministry, sizes, className }: { ministry: Ministry; sizes: str
   );
 }
 
-const sampleNote = "These ministries and photos are examples for now. Our full list is coming soon.";
+const sampleNote = "Some ministry details and photos are examples for now. Our full list is coming soon.";
 
 export default function Ministries({ variant = "rail" }: { variant?: "rail" | "grid" }) {
   if (variant === "grid") {
@@ -81,7 +81,7 @@ export default function Ministries({ variant = "rail" }: { variant?: "rail" | "g
               link: "/ministries",
             }))}
             defaultIndex={0}
-            accentColor="#fcdc58"
+            accentColor="var(--gold)"
             overlayColor="#0b0514"
             height={520}
             gap={12}

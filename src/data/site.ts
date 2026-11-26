@@ -34,12 +34,19 @@ export const siteConfig = {
     country: "PH",
   },
   facebook: "https://www.facebook.com/cocciligan",
+  messenger: "https://m.me/cocciligan",
   watchUrl: "https://www.facebook.com/cocciligan/videos",
 } as const;
 
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   `${siteConfig.venue.name}, ${siteConfig.venue.city}`,
 )}`;
+
+const venueQuery = encodeURIComponent(`${siteConfig.venue.name}, ${siteConfig.venue.city}`);
+
+export const mapsEmbedUrl = `https://maps.google.com/maps?q=${venueQuery}&z=17&output=embed`;
+
+export const telHref = `tel:${siteConfig.phone.replace(/[^+\d]/g, "")}`;
 
 export const navigation = [
   { label: "About", href: "/about" },

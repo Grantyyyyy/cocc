@@ -31,7 +31,7 @@ export default function SideRaysBackground() {
       <div className="absolute inset-0">
         <SideRays
           origin="top-right"
-          rayColor1="#fcdc58"
+          rayColor1="#c9a45c"
           rayColor2="#8214d9"
           speed={1.2}
           intensity={1.1}

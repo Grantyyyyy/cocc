@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Icon from "@/components/Icon";
+import ServiceCard from "@/components/ServiceCard";
 import worship from "../../public/img/worship.webp";
 import { primaryCta, secondaryCta, siteConfig } from "@/data/site";
 
@@ -38,9 +39,7 @@ export default function Hero() {
               <span lang="ceb" className="font-medium text-text">
                 {siteConfig.welcome.ceb}
               </span>{" "}
-              Join us {siteConfig.service.day}s,{" "}
-              <span className="numeric">{siteConfig.service.time}</span>, at{" "}
-              {siteConfig.venue.name}, {siteConfig.venue.city}.
+              {siteConfig.welcome.en}
             </p>
             <div
               className="rise mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
@@ -62,8 +61,13 @@ export default function Hero() {
               </Link>
             </div>
           </div>
+
+          <ServiceCard
+            className="rise absolute bottom-14 right-14 hidden w-72 bg-ground/75 backdrop-blur-xl lg:block"
+          />
         </div>
 
+        <ServiceCard className="rise mt-3 bg-raised lg:hidden" />
       </div>
     </section>
   );

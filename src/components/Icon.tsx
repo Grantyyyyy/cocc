@@ -9,7 +9,9 @@ type IconName =
   | "clock"
   | "menu"
   | "close"
-  | "quote";
+  | "quote"
+  | "chat"
+  | "calendar";
 
 const paths: Record<IconName, React.ReactNode> = {
   "arrow-right": <path d="M4 12h15m-5.5-5.5L19 12l-5.5 5.5" />,
@@ -35,6 +37,18 @@ const paths: Record<IconName, React.ReactNode> = {
     <>
       <circle cx="12" cy="12" r="8.5" />
       <path d="M12 7.2V12l3.2 2" />
+    </>
+  ),
+  chat: (
+    <path
+      d="M12 4.5c4.4 0 8 3.1 8 7s-3.6 7-8 7c-1 0-2-.2-2.9-.5L5 19.5l1.1-3.4A6.6 6.6 0 0 1 4 11.5c0-3.9 3.6-7 8-7Z"
+      strokeLinejoin="round"
+    />
+  ),
+  calendar: (
+    <>
+      <rect x="4" y="5.5" width="16" height="14" rx="2.5" />
+      <path d="M4 10h16M8.5 3.5v4m7-4v4" />
     </>
   ),
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,

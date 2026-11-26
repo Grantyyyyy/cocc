@@ -5,6 +5,7 @@ import Events from "@/components/Events";
 import Hero from "@/components/Hero";
 import Ministries from "@/components/Ministries";
 import Pillars from "@/components/Pillars";
+import PublishedBooks from "@/components/PublishedBooks";
 import Sermons from "@/components/Sermons";
 import WelcomeBand from "@/components/WelcomeBand";
 import { siteConfig } from "@/data/site";
@@ -28,6 +29,7 @@ export default function Home() {
       <WelcomeBand />
       <Pillars linkToAbout />
       <Sermons />
+      <PublishedBooks />
       <Events />
       <DailyVerse />
       <CtaBand />

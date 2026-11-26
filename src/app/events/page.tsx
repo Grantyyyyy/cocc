@@ -10,14 +10,17 @@ export const metadata = pageMetadata({
   path: "/events",
 });
 
+// Re-render hourly so past events drop off on their own.
+export const revalidate = 3600;
+
 export default function EventsPage() {
   return (
     <>
       <PageHeader
         title="Events"
         description="What’s coming up at COCC. Everyone’s welcome, first-timers included."
-        image="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=2000&q=70"
-        imageAlt="A crowd worshipping with hands raised under stage lights"
+        image="/img/worship-ministry.png"
+        imageAlt="The congregation raising their hands as the worship team leads from the stage, framed by red curtains"
       />
       <Events standalone />
       <CtaBand />
