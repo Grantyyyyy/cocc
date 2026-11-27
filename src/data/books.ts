@@ -26,9 +26,8 @@ export const books: Book[] = [
     tagline: "Receiving a Hundredfold of Increase in Times of Crisis",
     foreword: "Foreword by Bishop Daniel Balais",
     format: "Paperback",
-    // TODO(church): confirm the real price, then set priceConfirmed to true.
-    price: 350,
-    priceConfirmed: false,
+    price: 100,
+    priceConfirmed: true,
     cover: blessedLife,
     coverAlt: "The Blessed Life by Bayani C. Areola, with gold grapevines on a dark green cover",
   },
