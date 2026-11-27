@@ -11,7 +11,16 @@ type IconName =
   | "close"
   | "quote"
   | "chat"
-  | "calendar";
+  | "calendar"
+  | "bag"
+  | "plus"
+  | "minus"
+  | "truck"
+  | "check"
+  | "wallet"
+  | "trash"
+  | "copy"
+  | "expand";
 
 const paths: Record<IconName, React.ReactNode> = {
   "arrow-right": <path d="M4 12h15m-5.5-5.5L19 12l-5.5 5.5" />,
@@ -51,6 +60,37 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M4 10h16M8.5 3.5v4m7-4v4" />
     </>
   ),
+  bag: (
+    <>
+      <path d="M5.5 8.5h13l-1 11a1.5 1.5 0 0 1-1.5 1.4H8a1.5 1.5 0 0 1-1.5-1.4l-1-11Z" strokeLinejoin="round" />
+      <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5" />
+    </>
+  ),
+  plus: <path d="M12 5.5v13M5.5 12h13" />,
+  minus: <path d="M5.5 12h13" />,
+  truck: (
+    <>
+      <path d="M3.5 6.5h10v9h-10zM13.5 9.5h3.6l2.4 3v3h-6" strokeLinejoin="round" />
+      <circle cx="7" cy="17.5" r="1.7" />
+      <circle cx="16.5" cy="17.5" r="1.7" />
+    </>
+  ),
+  check: <path d="m5 12.5 4.5 4.5L19 7.5" strokeLinejoin="round" />,
+  wallet: (
+    <>
+      <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H17v3" />
+      <rect x="4" y="7.5" width="16" height="11.5" rx="2.5" />
+      <path d="M16 13.2h.01" strokeWidth="2.5" />
+    </>
+  ),
+  trash: <path d="M5 7h14M10 7V5h4v2m-7 0 .8 12h8.4L17 7M10.5 10.5v5m3-5v5" strokeLinejoin="round" />,
+  copy: (
+    <>
+      <rect x="8.5" y="8.5" width="11" height="11" rx="2" />
+      <path d="M15.5 8.5V6.5a2 2 0 0 0-2-2h-7a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h2" />
+    </>
+  ),
+  expand: <path d="M14 4.5h5.5V10M10 19.5H4.5V14M19.5 4.5 13.5 10.5M4.5 19.5l6-6" />,
   menu: <path d="M4 7h16M4 12h16M4 17h16" />,
   close: <path d="m6 6 12 12M18 6 6 18" />,
   quote: (

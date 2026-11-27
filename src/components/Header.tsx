@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/Icon";
+import CartButton from "@/components/shop/CartButton";
 import logo from "../../public/brand/cocc-logo.webp";
 import { navigation, primaryCta, siteConfig } from "@/data/site";
 
@@ -114,6 +115,7 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <CartButton />
           <Link
             href={primaryCta.href}
             className="group hidden items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-on-gold transition-[background-color,gap] duration-300 hover:gap-3 hover:bg-gold-hover sm:inline-flex"

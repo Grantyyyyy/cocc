@@ -22,6 +22,9 @@ export default function MobileActionBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Checkout has its own sticky actions.
+  if (pathname === "/checkout") return null;
+
   return (
     <div
       className={`fixed inset-x-0 bottom-0 z-40 px-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] lg:hidden ${
